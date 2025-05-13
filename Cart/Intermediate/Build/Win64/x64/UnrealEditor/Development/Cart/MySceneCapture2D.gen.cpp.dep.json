@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\myscenecapture2d.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\x64\\carteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\cart\\definitions.cart.h",
+            "c:\\users\\ga3\\desktop\\cart\\cart\\source\\cart\\myscenecapture2d.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\engine\\scenecapture2d.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\engine\\scenecapture.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\scenecapture.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\scenecapture2d.generated.h",
+            "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\myscenecapture2d.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

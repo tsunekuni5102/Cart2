@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Cart",
+			"Path": "..\\Source\\Cart.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "CartEditor",
+			"Path": "..\\Source\\CartEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

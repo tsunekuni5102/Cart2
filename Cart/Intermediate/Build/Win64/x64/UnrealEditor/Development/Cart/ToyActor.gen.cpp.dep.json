@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\toyactor.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\x64\\carteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\cart\\definitions.cart.h",
+            "c:\\users\\ga3\\desktop\\cart\\cart\\source\\cart\\public\\toyactor.h",
+            "c:\\users\\ga3\\desktop\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\toyactor.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
