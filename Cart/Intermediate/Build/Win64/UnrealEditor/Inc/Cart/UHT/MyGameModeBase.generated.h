@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CART_MyGameModeBase_generated_h
 
-#define FID_Cart_Cart_Source_Cart_MyGameModeBase_h_10_INCLASS_NO_PURE_DECLS \
+#define FID_2cart_Cart_Source_Cart_MyGameModeBase_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyGameModeBase(); \
 	friend struct Z_Construct_UClass_AMyGameModeBase_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(AMyGameModeBase)
 
 
-#define FID_Cart_Cart_Source_Cart_MyGameModeBase_h_10_ENHANCED_CONSTRUCTORS \
+#define FID_2cart_Cart_Source_Cart_MyGameModeBase_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyGameModeBase(AMyGameModeBase&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~AMyGameModeBase();
 
 
-#define FID_Cart_Cart_Source_Cart_MyGameModeBase_h_7_PROLOG
-#define FID_Cart_Cart_Source_Cart_MyGameModeBase_h_10_GENERATED_BODY \
+#define FID_2cart_Cart_Source_Cart_MyGameModeBase_h_7_PROLOG
+#define FID_2cart_Cart_Source_Cart_MyGameModeBase_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Cart_Cart_Source_Cart_MyGameModeBase_h_10_INCLASS_NO_PURE_DECLS \
-	FID_Cart_Cart_Source_Cart_MyGameModeBase_h_10_ENHANCED_CONSTRUCTORS \
+	FID_2cart_Cart_Source_Cart_MyGameModeBase_h_10_INCLASS_NO_PURE_DECLS \
+	FID_2cart_Cart_Source_Cart_MyGameModeBase_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> CART_API UClass* StaticClass<class AMyGameModeBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Cart_Cart_Source_Cart_MyGameModeBase_h
+#define CURRENT_FILE_ID FID_2cart_Cart_Source_Cart_MyGameModeBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
