@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\cartweaponcomponent.gen.cpp",
+        "Source": "c:\\users\\ga3\\desktop\\cart2\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\cartweaponcomponent.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\cart\\cart\\intermediate\\build\\win64\\x64\\carteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "c:\\users\\ga3\\desktop\\cart2\\cart\\intermediate\\build\\win64\\x64\\carteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\cart\\cart\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\cart\\definitions.cart.h",
-            "c:\\cart\\cart\\source\\cart\\cartweaponcomponent.h",
-            "c:\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\cartweaponcomponent.generated.h"
+            "c:\\users\\ga3\\desktop\\cart2\\cart\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\cart\\definitions.cart.h",
+            "c:\\users\\ga3\\desktop\\cart2\\cart\\source\\cart\\cartweaponcomponent.h",
+            "c:\\users\\ga3\\desktop\\cart2\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\cartweaponcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
