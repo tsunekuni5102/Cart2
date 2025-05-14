@@ -5,8 +5,11 @@
 #include "InputActionValue.h"
 #include "MyCharacter.generated.h"
 
+class USoundBase;
 class UInputMappingContext;
 class UInputAction;
+class UCameraComponent;
+
 
 UCLASS()
 class CART_API AMyCharacter : public ACharacter
@@ -18,12 +21,28 @@ public:
 
 protected:
     virtual void BeginPlay() override;
+    virtual void Tick(float DeltaTime) override;
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
 
     void Move(const FInputActionValue& Value);
     void Look(const FInputActionValue& Value);
     void StartSpeedBoost();
     void StopSpeedBoost();
+    void HandleAttachToy();
+    void UpdateAttachedToyPosition();
+
+    // Toyアタッチ処理用
+    UPROPERTY()
+    AActor* AttachedToy = nullptr;
+
+    UPROPERTY(EditAnywhere, Category = "Toy")
+    float ToyAttachDistance = 500.0f;
+
+    // プレイヤーのカメラ（BPでアサインする）
+    UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Camera")
+    UCameraComponent* FollowCamera;
 
     // --- 入力を無効にする処理 ---
     void DisableMovementForSeconds(float Seconds);
@@ -46,14 +65,14 @@ protected:
     UPROPERTY(EditDefaultsOnly, Category = "Input")
     UInputAction* SpeedBoostAction;
 
+    UPROPERTY(EditDefaultsOnly, Category = "Input")
+    UInputAction* AttachToyAction;
     // --- スピード制御 ---
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
     float NormalSpeed = 600.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
     float BoostedSpeed = 30000.f;
-
-    virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
     UPROPERTY(EditAnywhere, Category = "Sound")
     USoundBase* CollisionSound;

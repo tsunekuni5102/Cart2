@@ -7,6 +7,8 @@
 // Sets default values
 ACustomerCharacter::ACustomerCharacter()
 {
+	Tags.Add(FName("CPU"));  // Å© Ç±Ç±Ç≈É^ÉOí«â¡
+
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
