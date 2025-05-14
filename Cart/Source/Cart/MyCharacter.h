@@ -1,4 +1,5 @@
 #pragma once
+
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
@@ -15,41 +16,47 @@ class CART_API AMyCharacter : public ACharacter
 public:
     AMyCharacter();
 
+protected:
     virtual void BeginPlay() override;
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-  /*  virtual void Tick(float DeltaTime) override;*/
 
-protected:
-    // 入力アクション
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-    UInputAction* MoveAction;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-    UInputAction* LookAction;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-    UInputAction* JumpAction;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-    UInputAction* SpeedBoostAction;
-
-    // 入力マッピングコンテキスト
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-    UInputMappingContext* IMC_Player;
-
-    // 移動速度
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Movement")
-    float NormalSpeed = 600.f;
-
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Movement")
-    float BoostedSpeed = 2400.f;
-
-    // スピードブーストフラグ
-    bool bIsSpeedBoosted = false;
-
-    // 入力関数
     void Move(const FInputActionValue& Value);
     void Look(const FInputActionValue& Value);
     void StartSpeedBoost();
     void StopSpeedBoost();
+
+    // --- 入力を無効にする処理 ---
+    void DisableMovementForSeconds(float Seconds);
+    void EnableMovement();
+    FTimerHandle MovementDisableTimer;
+
+    // --- Enhanced Input 関連 ---
+    UPROPERTY(EditDefaultsOnly, Category = "Input")
+    UInputMappingContext* IMC_Player;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Input")
+    UInputAction* MoveAction;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Input")
+    UInputAction* LookAction;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Input")
+    UInputAction* JumpAction;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Input")
+    UInputAction* SpeedBoostAction;
+
+    // --- スピード制御 ---
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+    float NormalSpeed = 600.f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+    float BoostedSpeed = 30000.f;
+
+    virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
+    UPROPERTY(EditAnywhere, Category = "Sound")
+    USoundBase* CollisionSound;
+
+    bool bIsSpeedBoosted = false;
 };

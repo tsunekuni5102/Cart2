@@ -7,7 +7,7 @@ ACustomerAIController::ACustomerAIController()
 {
     PrimaryActorTick.bCanEverTick = true;
 
-    
+    Tags.Add(FName("CPU"));  // Å© Ç±Ç±Ç≈É^ÉOí«â¡
 }
 
 void ACustomerAIController::BeginPlay()

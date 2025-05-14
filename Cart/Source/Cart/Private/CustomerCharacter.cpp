@@ -15,8 +15,6 @@ ACustomerCharacter::ACustomerCharacter()
 
 	// 使用するAIControllerクラスを指定
 	AIControllerClass = ACustomerAIController::StaticClass();
-
-	Tags.Add(FName("CPU"));  // ← ここでタグ追加
 }
 
 // Called when the game starts or when spawned

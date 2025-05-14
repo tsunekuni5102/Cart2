@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CartModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+230fab7df7e9a55856b3c9fedff9b00289815211")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a169aa0bd7a88c7e829ae75c467d9789f76ddc31")]
->>>>>>> origin/田中
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ccd0f45921aa17f73597589aac9636133d796fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("CartModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CartModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

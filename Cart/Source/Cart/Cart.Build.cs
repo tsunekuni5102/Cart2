@@ -8,6 +8,11 @@ public class Cart : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
+		PublicDependencyModuleNames.AddRange(new string[] { 
+			"Core", "CoreUObject", "Engine", "InputCore",
+			"EnhancedInput",
+			"NavigationSystem",
+			"AIModule"          // AIä÷òAÇ‡égÇ¡ÇƒÇ¢ÇÍÇŒïKê{
+		});
 	}
 }

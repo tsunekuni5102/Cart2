@@ -1,8 +1,5 @@
 /I "."
-<<<<<<< HEAD
 /I "C:\Cart\Cart\Source\Cart\Private"
-=======
->>>>>>> origin/田中
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT"
 /I "Runtime\Engine\Classes"
 /I "Runtime\Engine\Public"
@@ -289,14 +286,12 @@
 /I "Editor\SceneDepthPickerMode\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationEditMode\UHT"
 /I "Editor\AnimationEditMode\Public"
-<<<<<<< HEAD
+/I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AIModule\UHT"
+/I "Runtime\AIModule\Classes"
+/I "Runtime\AIModule\Public"
 /I "C:\Cart\Cart\Intermediate\Build\Win64\UnrealEditor\Inc\Cart\UHT"
 /I "C:\Cart\Cart\Source"
 /I "C:\Cart\Cart\Source\Cart\Public"
-=======
-/I "C:\Users\GA3\Desktop\CartUE\Cart\Intermediate\Build\Win64\UnrealEditor\Inc\Cart\UHT"
-/I "C:\Users\GA3\Desktop\CartUE\Cart\Source"
->>>>>>> origin/田中
 /I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
 /I "..\Plugins\EnhancedInput\Source"
 /I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"

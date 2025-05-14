@@ -12,10 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.vsconfig" />
-<<<<<<< HEAD
     <None Include="..\..\UpgradeLog.htm" />
-=======
->>>>>>> origin/田中
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -23,6 +20,9 @@
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorSettings.ini">
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultEngine.ini">
@@ -148,7 +148,6 @@
     <ClCompile Include="..\..\Source\Cart\CartWeaponComponent.h">
       <Filter>Source\Cart</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="..\..\Source\Cart\MyCharacter.cpp">
       <Filter>Source\Cart</Filter>
     </ClCompile>
@@ -161,18 +160,6 @@
     <ClCompile Include="..\..\Source\Cart\MyClass.h">
       <Filter>Source\Cart</Filter>
     </ClCompile>
-    <Filter Include="Source\Cart\Private">
-      <UniqueIdentifier>{1971AF3F-2336-391C-9C37-01B365F74063}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\Cart\Private\MovableObject.cpp">
-      <Filter>Source\Cart\Private</Filter>
-    </ClCompile>
-    <Filter Include="Source\Cart\Public">
-      <UniqueIdentifier>{038E44DA-A566-3F8E-B049-C93E86CBE9D5}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\Cart\Public\MovableObject.h">
-      <Filter>Source\Cart\Public</Filter>
-=======
     <ClCompile Include="..\..\Source\Cart\MyGameModeBase.cpp">
       <Filter>Source\Cart</Filter>
     </ClCompile>
@@ -185,6 +172,30 @@
     <ClCompile Include="..\..\Source\Cart\MySceneCapture2D.h">
       <Filter>Source\Cart</Filter>
     </ClCompile>
+    <Filter Include="Source\Cart\Private">
+      <UniqueIdentifier>{1971AF3F-2336-391C-9C37-01B365F74063}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Cart\Private\CustomerAIController.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\CustomerCharacter.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\MovableObject.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Cart\Public">
+      <UniqueIdentifier>{038E44DA-A566-3F8E-B049-C93E86CBE9D5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Cart\Public\CustomerAIController.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\CustomerCharacter.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\MovableObject.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
     <Filter Include="Source\Cart\UI">
       <UniqueIdentifier>{F75D08A3-C3B1-3494-9CD1-B797E3FCC881}</UniqueIdentifier>
     </Filter>
@@ -193,7 +204,6 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Cart\UI\MyHUD.h">
       <Filter>Source\Cart\UI</Filter>
->>>>>>> origin/田中
     </ClCompile>
   </ItemGroup>
 </Project>

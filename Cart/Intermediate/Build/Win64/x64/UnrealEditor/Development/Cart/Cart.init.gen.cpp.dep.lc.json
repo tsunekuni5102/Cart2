@@ -1,19 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-<<<<<<< HEAD
         "Source": "c:\\cart\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\cart.init.gen.cpp",
         "ProvidedModule": "",
         "PCH": "c:\\cart\\cart\\intermediate\\build\\win64\\x64\\carteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
             "c:\\cart\\cart\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\cart\\definitions.cart.h"
-=======
-        "Source": "c:\\users\\ga3\\desktop\\cartue\\cart\\intermediate\\build\\win64\\unrealeditor\\inc\\cart\\uht\\cart.init.gen.cpp",
-        "ProvidedModule": "",
-        "PCH": "c:\\users\\ga3\\desktop\\cartue\\cart\\intermediate\\build\\win64\\x64\\carteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
-        "Includes": [
-            "c:\\users\\ga3\\desktop\\cartue\\cart\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\cart\\definitions.cart.h"
->>>>>>> origin/田中
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
