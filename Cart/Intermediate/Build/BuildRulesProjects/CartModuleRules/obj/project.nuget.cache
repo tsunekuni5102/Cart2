@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y3IYXYHorNQ=",
+  "dgSpecHash": "62aZ3U+90q0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\GA3\\Desktop\\Cart\\Cart\\Intermediate\\Build\\BuildRulesProjects\\CartModuleRules\\CartModuleRules.csproj",
+  "projectFilePath": "C:\\Users\\GA3\\Desktop\\Cart2\\Cart\\Intermediate\\Build\\BuildRulesProjects\\CartModuleRules\\CartModuleRules.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GA3\\.nuget\\packages\\bitfaster.caching\\2.4.1\\bitfaster.caching.2.4.1.nupkg.sha512",
     "C:\\Users\\GA3\\.nuget\\packages\\blake3\\1.1.0\\blake3.1.1.0.nupkg.sha512",

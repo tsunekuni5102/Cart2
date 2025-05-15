@@ -6,7 +6,7 @@
 AMyGameModeBase::AMyGameModeBase()
 {
   
-    PrimaryActorTick.bCanEverTick = true; //Tick(毎フレーム使用)
+    PrimaryActorTick.bCanEverTick = true; //Tick(毎フレーム使用)  
     CountdownTime = 60.0f;                //初期制限時間(秒)
     bGameTimeOver = false;                //最初はゲームオーバーしてない
 }
@@ -18,7 +18,7 @@ void AMyGameModeBase::BeginPlay()
 
     if (GEngine)
     {
-        //デバッグメッセージを画面に表示(1回限り)
+        //デバッグメッセージを画面に表示(1回限り)  
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Countdown Start!"));
     }
 }

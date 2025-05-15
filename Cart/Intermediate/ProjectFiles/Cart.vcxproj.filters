@@ -184,6 +184,9 @@
     <ClCompile Include="..\..\Source\Cart\Private\MovableObject.cpp">
       <Filter>Source\Cart\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\MyTimeWidget.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\Cart\Public">
       <UniqueIdentifier>{038E44DA-A566-3F8E-B049-C93E86CBE9D5}</UniqueIdentifier>
     </Filter>
@@ -194,6 +197,9 @@
       <Filter>Source\Cart\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Cart\Public\MovableObject.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\MyTimeWidget.h">
       <Filter>Source\Cart\Public</Filter>
     </ClCompile>
     <Filter Include="Source\Cart\UI">
