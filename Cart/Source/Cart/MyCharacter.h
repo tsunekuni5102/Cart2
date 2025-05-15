@@ -32,10 +32,17 @@ protected:
     void StopSpeedBoost();
     void HandleAttachToy();
     void UpdateAttachedToyPosition();
+    void UpdateSpeedByTotalWeight();
+    void UpdateMovementSpeed();
 
-    // Toyアタッチ処理用
+    float CalculateSpeedWithWeight(float BaseSpeed) const;
+
     UPROPERTY()
-    AActor* AttachedToy = nullptr;
+    TArray<AActor*> AttachedToys;
+
+    //// Toyアタッチ処理用
+    //UPROPERTY()
+    //AActor* AttachedToy = nullptr;
 
     UPROPERTY(EditAnywhere, Category = "Toy")
     float ToyAttachDistance = 500.0f;
@@ -67,12 +74,15 @@ protected:
 
     UPROPERTY(EditDefaultsOnly, Category = "Input")
     UInputAction* AttachToyAction;
+
+    //UPROPERTY()
+    //TArray<AActor*> AttachedToys;
     // --- スピード制御 ---
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
-    float NormalSpeed = 600.f;
+    float NormalSpeed = 1200.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
-    float BoostedSpeed = 30000.f;
+    float BoostedSpeed = 2400.f;
 
     UPROPERTY(EditAnywhere, Category = "Sound")
     USoundBase* CollisionSound;

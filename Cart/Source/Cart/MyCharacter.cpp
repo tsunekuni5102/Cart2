@@ -14,6 +14,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "TimerManager.h"
+#include "Toy.h"
 
 
 AMyCharacter::AMyCharacter()
@@ -116,14 +117,14 @@ void AMyCharacter::StartSpeedBoost()
 {
     // ダッシュ状態にする
     bIsSpeedBoosted = true;
-    GetCharacterMovement()->MaxWalkSpeed = BoostedSpeed;
+    UpdateMovementSpeed();
 }
 
 void AMyCharacter::StopSpeedBoost()
 {
     // 通常速度に戻す
     bIsSpeedBoosted = false;
-    GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
+    UpdateMovementSpeed();
 }
 
 void AMyCharacter::NotifyActorBeginOverlap(AActor* OtherActor)
@@ -175,13 +176,13 @@ void AMyCharacter::EnableMovement()
 
 void AMyCharacter::HandleAttachToy()
 {
-    // 既におもちゃが装着されている場合は取り外す
-    if (AttachedToy)
-    {
-        AttachedToy->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-        AttachedToy = nullptr;
-        return;
-    }
+    //// 既におもちゃが装着されている場合は取り外す
+    //if (AttachedToy)
+    //{
+    //    AttachedToy->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+    //    AttachedToy = nullptr;
+    //    return;
+    //}
 
     // カメラが存在しない場合は何もしない
     if (!FollowCamera) return;
@@ -190,32 +191,107 @@ void AMyCharacter::HandleAttachToy()
     FVector Start = FollowCamera->GetComponentLocation();
     FVector End = Start + FollowCamera->GetForwardVector() * ToyAttachDistance;
 
+    // === ★ デバッグラインを描画 ===
+    DrawDebugLine(
+        GetWorld(),
+        Start,
+        End,
+        FColor::Green,
+        false,       // 永続ではない（デフォルト数秒表示）
+        2.0f,        // 表示時間（秒）
+        0,
+        2.0f         // 線の太さ
+    );
+
     FHitResult Hit;
     FCollisionQueryParams Params;
     Params.AddIgnoredActor(this); // 自分は無視
 
     if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params))
     {
-        if (Hit.GetActor() && Hit.GetActor()->ActorHasTag("Toy"))
+        AActor* HitActor = Hit.GetActor();
+
+        if (HitActor && HitActor->ActorHasTag("Toy"))
         {
-            AttachedToy = Hit.GetActor();// ヒットしたToyを保持
+            if (AttachedToys.Contains(HitActor))
+            {
+                HitActor->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+                AttachedToys.Remove(HitActor);
+            }
+            else
+            {
+                AttachedToys.Add(HitActor);
+            }
+
+            UpdateMovementSpeed(); // ← 速度更新
         }
     }
+}
+
+void AMyCharacter::UpdateAttachedToyPosition()
+{
+    if (!FollowCamera) return;
+
+    const FVector BaseLocation = FollowCamera->GetComponentLocation();
+    const FVector Forward = FollowCamera->GetForwardVector();
+
+    for (int32 i = 0; i < AttachedToys.Num(); ++i)
+    {
+        AActor* Toy = AttachedToys[i];
+        if (Toy)
+        {
+            // Y方向に並べつつ、Z方向に -20 下げる
+            FVector Offset = FVector(0, i * 30.0f, -20.0f);
+            FVector TargetLocation = BaseLocation + Forward * 100.0f + Offset;
+            Toy->SetActorLocation(TargetLocation);
+        }
+    }
+}
+
+void AMyCharacter::UpdateSpeedByTotalWeight()
+{
+    float TotalWeight = 0.0f;
+
+    for (AActor* Toy : AttachedToys)
+    {
+        if (AToy* ToyActor = Cast<AToy>(Toy))
+        {
+            TotalWeight += ToyActor->Weight;
+        }
+    }
+
+    float SpeedFactor = FMath::Max(1.0f + TotalWeight, 1.0f);
+    float NewSpeed = NormalSpeed / SpeedFactor;
+
+    GetCharacterMovement()->MaxWalkSpeed = NewSpeed;
+    UE_LOG(LogTemp, Warning, TEXT("Total Toy Weight: %.2f | Speed: %.2f"), TotalWeight, NewSpeed);
 }
 
 void AMyCharacter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
-    // おもちゃの位置をカメラの前に常に更新
     UpdateAttachedToyPosition();
 }
 
-void AMyCharacter::UpdateAttachedToyPosition()
+float AMyCharacter::CalculateSpeedWithWeight(float BaseSpeed) const
 {
-    if (AttachedToy && FollowCamera)
+    float TotalWeight = 0.0f;
+
+    for (AActor* Toy : AttachedToys)
     {
-        FVector TargetLocation = FollowCamera->GetComponentLocation() + FollowCamera->GetForwardVector() * 100.f;
-        AttachedToy->SetActorLocation(TargetLocation);
+        if (const AToy* ToyActor = Cast<AToy>(Toy))
+        {
+            TotalWeight += ToyActor->Weight;
+        }
     }
+
+    float AdjustedSpeed = BaseSpeed / FMath::Max(TotalWeight, 1.0f);
+    return FMath::Max(AdjustedSpeed, 200.0f); // 最低速度
+}
+
+void AMyCharacter::UpdateMovementSpeed()
+{
+    float BaseSpeed = bIsSpeedBoosted ? BoostedSpeed : NormalSpeed;
+    float AdjustedSpeed = CalculateSpeedWithWeight(BaseSpeed);
+    GetCharacterMovement()->MaxWalkSpeed = AdjustedSpeed;
 }

@@ -24,7 +24,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	//おもちゃの重量(kgなど)
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Toy Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Toy")
 	float Weight;
 
 	//おもちゃのスコア(ゲーム内の得点)

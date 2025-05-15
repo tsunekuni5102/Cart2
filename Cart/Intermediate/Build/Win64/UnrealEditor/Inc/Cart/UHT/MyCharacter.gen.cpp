@@ -38,18 +38,18 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 		{ "IncludePath", "MyCharacter.h" },
 		{ "ModuleRelativePath", "MyCharacter.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttachedToy_MetaData[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Toy\xef\xbf\xbd""A\xef\xbf\xbd^\xef\xbf\xbd""b\xef\xbf\xbd`\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdp\n" },
-#endif
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttachedToys_MetaData[] = {
 		{ "ModuleRelativePath", "MyCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Toy\xef\xbf\xbd""A\xef\xbf\xbd^\xef\xbf\xbd""b\xef\xbf\xbd`\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdp" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyAttachDistance_MetaData[] = {
 		{ "Category", "Toy" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//// Toy\xef\xbf\xbd""A\xef\xbf\xbd^\xef\xbf\xbd""b\xef\xbf\xbd`\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdp\n//UPROPERTY()\n//AActor* AttachedToy = nullptr;\n" },
+#endif
 		{ "ModuleRelativePath", "MyCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "/ Toy\xef\xbf\xbd""A\xef\xbf\xbd^\xef\xbf\xbd""b\xef\xbf\xbd`\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdp\nUPROPERTY()\nAActor* AttachedToy = nullptr;" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FollowCamera_MetaData[] = {
 		{ "Category", "Camera" },
@@ -95,11 +95,11 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NormalSpeed_MetaData[] = {
 		{ "Category", "Movement" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// --- \xef\xbf\xbdX\xef\xbf\xbds\xef\xbf\xbd[\xef\xbf\xbdh\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd ---\n" },
+		{ "Comment", "//UPROPERTY()\n//TArray<AActor*> AttachedToys;\n// --- \xef\xbf\xbdX\xef\xbf\xbds\xef\xbf\xbd[\xef\xbf\xbdh\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd ---\n" },
 #endif
 		{ "ModuleRelativePath", "MyCharacter.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "--- \xef\xbf\xbdX\xef\xbf\xbds\xef\xbf\xbd[\xef\xbf\xbdh\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd ---" },
+		{ "ToolTip", "UPROPERTY()\nTArray<AActor*> AttachedToys;\n --- \xef\xbf\xbdX\xef\xbf\xbds\xef\xbf\xbd[\xef\xbf\xbdh\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd ---" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BoostedSpeed_MetaData[] = {
@@ -111,7 +111,8 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 		{ "ModuleRelativePath", "MyCharacter.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttachedToy;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttachedToys_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_AttachedToys;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ToyAttachDistance;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FollowCamera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_IMC_Player;
@@ -130,7 +131,8 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToy = { "AttachedToy", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, AttachedToy), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachedToy_MetaData), NewProp_AttachedToy_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys_Inner = { "AttachedToys", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys = { "AttachedToys", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, AttachedToys), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachedToys_MetaData), NewProp_AttachedToys_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyAttachDistance = { "ToyAttachDistance", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, ToyAttachDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyAttachDistance_MetaData), NewProp_ToyAttachDistance_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_FollowCamera = { "FollowCamera", nullptr, (EPropertyFlags)0x002008000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, FollowCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FollowCamera_MetaData), NewProp_FollowCamera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_IMC_Player = { "IMC_Player", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, IMC_Player), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IMC_Player_MetaData), NewProp_IMC_Player_MetaData) };
@@ -143,7 +145,8 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyCharacter_St
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_BoostedSpeed = { "BoostedSpeed", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, BoostedSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoostedSpeed_MetaData), NewProp_BoostedSpeed_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_CollisionSound = { "CollisionSound", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, CollisionSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CollisionSound_MetaData), NewProp_CollisionSound_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharacter_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToy,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyAttachDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_FollowCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_IMC_Player,
@@ -194,14 +197,14 @@ AMyCharacter::~AMyCharacter() {}
 // End Class AMyCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 4029050901U) },
+		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 3894739354U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_3796424540(TEXT("/Script/Cart"),
-	Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_2569657008(TEXT("/Script/Cart"),
+	Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
