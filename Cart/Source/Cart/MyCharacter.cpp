@@ -176,55 +176,54 @@ void AMyCharacter::EnableMovement()
 
 void AMyCharacter::HandleAttachToy()
 {
-    //// 既におもちゃが装着されている場合は取り外す
-    //if (AttachedToy)
-    //{
-    //    AttachedToy->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-    //    AttachedToy = nullptr;
-    //    return;
-    //}
-
-    // カメラが存在しない場合は何もしない
     if (!FollowCamera) return;
 
-    // カメラの前方にレイを飛ばしてToyを探す
     FVector Start = FollowCamera->GetComponentLocation();
     FVector End = Start + FollowCamera->GetForwardVector() * ToyAttachDistance;
 
-    // === ★ デバッグラインを描画 ===
-    DrawDebugLine(
-        GetWorld(),
-        Start,
-        End,
-        FColor::Green,
-        false,       // 永続ではない（デフォルト数秒表示）
-        2.0f,        // 表示時間（秒）
-        0,
-        2.0f         // 線の太さ
-    );
+    float SphereRadius = 30.0f; // 範囲を広げたい場合はこの値を増やす
 
-    FHitResult Hit;
+    // ヒット結果の配列
+    TArray<FHitResult> HitResults;
+
+    // スフィアで複数ヒットを試みる
     FCollisionQueryParams Params;
     Params.AddIgnoredActor(this); // 自分は無視
 
-    if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params))
+    bool bHit = GetWorld()->SweepMultiByChannel(
+        HitResults,
+        Start,
+        End,
+        FQuat::Identity,
+        ECC_Visibility,
+        FCollisionShape::MakeSphere(SphereRadius),
+        Params
+    );
+
+    // デバッグ表示
+    DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 2.0f, 0, 2.0f);
+    DrawDebugSphere(GetWorld(), End, SphereRadius, 12, FColor::Red, false, 2.0f);
+
+    if (bHit)
     {
-        AActor* HitActor = Hit.GetActor();
-
-        if (HitActor && HitActor->ActorHasTag("Toy"))
+        for (const FHitResult& Hit : HitResults)
         {
-            if (AttachedToys.Contains(HitActor))
+            AActor* HitActor = Hit.GetActor();
+            if (HitActor && HitActor->ActorHasTag("Toy"))
             {
-                HitActor->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-                AttachedToys.Remove(HitActor);
+                if (AttachedToys.Contains(HitActor))
+                {
+                    HitActor->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+                    AttachedToys.Remove(HitActor);
+                }
+                else
+                {
+                    AttachedToys.Add(HitActor);
+                }
             }
-            else
-            {
-                AttachedToys.Add(HitActor);
-            }
-
-            UpdateMovementSpeed(); // ← 速度更新
         }
+
+        UpdateMovementSpeed(); // 最後に速度更新
     }
 }
 
