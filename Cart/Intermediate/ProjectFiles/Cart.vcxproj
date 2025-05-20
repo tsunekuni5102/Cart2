@@ -660,10 +660,6 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_1)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_1)</ForcedIncludeFiles>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Cart\Private\MyTimeWidget.cpp">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_1)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_1)</ForcedIncludeFiles>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Cart\Public\CustomerAIController.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_1)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_1)</ForcedIncludeFiles>
@@ -673,10 +669,6 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_1)</ForcedIncludeFiles>
     </ClCompile>
     <ClCompile Include="..\..\Source\Cart\Public\MovableObject.h">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_1)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_1)</ForcedIncludeFiles>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Cart\Public\MyTimeWidget.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_1)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_1)</ForcedIncludeFiles>
     </ClCompile>
