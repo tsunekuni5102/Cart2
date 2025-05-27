@@ -15,6 +15,7 @@
 #include "Engine/World.h"
 #include "TimerManager.h"
 #include "Toy.h"
+#include "Mother.h"
 
 
 AMyCharacter::AMyCharacter()
@@ -82,6 +83,10 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
         EnhancedInput->BindAction(SpeedBoostAction, ETriggerEvent::Completed, this, &AMyCharacter::StopSpeedBoost);
         // おもちゃの装着／取り外し
         EnhancedInput->BindAction(AttachToyAction, ETriggerEvent::Started, this, &AMyCharacter::HandleAttachToy);
+
+        // Yボタン長押し処理
+        EnhancedInput->BindAction(YAction, ETriggerEvent::Started, this, &AMyCharacter::OnYPressed);
+        EnhancedInput->BindAction(YAction, ETriggerEvent::Completed, this, &AMyCharacter::OnYReleased);
     }
 }
 
@@ -293,4 +298,68 @@ void AMyCharacter::UpdateMovementSpeed()
     float BaseSpeed = bIsSpeedBoosted ? BoostedSpeed : NormalSpeed;
     float AdjustedSpeed = CalculateSpeedWithWeight(BaseSpeed);
     GetCharacterMovement()->MaxWalkSpeed = AdjustedSpeed;
+}
+
+void AMyCharacter::OnYPressed()
+{
+    if (bIsHoldingYButton) return;
+
+    bIsHoldingYButton = true;
+
+    // 3秒後にチェック
+    GetWorldTimerManager().SetTimer(YButtonHoldTimer, this, &AMyCharacter::TryTransferToysToMother, 3.0f, false);
+}
+
+void AMyCharacter::OnYReleased()
+{
+    bIsHoldingYButton = false;
+
+    // キャンセル
+    GetWorldTimerManager().ClearTimer(YButtonHoldTimer);
+}
+
+void AMyCharacter::TryTransferToysToMother()
+{
+    if (!bIsHoldingYButton) return; // 離された場合中止
+
+    FVector Start = FollowCamera->GetComponentLocation();
+    FVector End = Start + FollowCamera->GetForwardVector() * 500.0f;
+
+    FHitResult Hit;
+    FCollisionQueryParams Params;
+    Params.AddIgnoredActor(this);
+
+    bool bHit = GetWorld()->LineTraceSingleByChannel(
+        Hit,
+        Start,
+        End,
+        ECC_Visibility,
+        Params
+    );
+
+    if (bHit)
+    {
+        AMother* Mother = Cast<AMother>(Hit.GetActor());
+        if (Mother)
+        {
+            int32 TotalScore = 0;
+
+            for (AActor* Toy : AttachedToys)
+            {
+                if (AToy* ToyActor = Cast<AToy>(Toy))
+                {
+                    TotalScore += ToyActor->Score;
+                    ToyActor->Destroy(); // おもちゃを削除
+                }
+            }
+
+            AttachedToys.Empty();
+            UpdateMovementSpeed();
+
+            Mother->AddScore(TotalScore);
+            UE_LOG(LogTemp, Warning, TEXT("Transferred %d points to mother."), TotalScore);
+        }
+    }
+
+    bIsHoldingYButton = false;
 }

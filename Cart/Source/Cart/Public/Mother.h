@@ -26,4 +26,20 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	// スコアを加算する
+
+	void AddScore(int32 Amount);
+
+	// スコアを取得する
+
+	int32 GetScore() const;
+
+private:
+
+	// 現在のスコア
+
+	int32 Score;
+
+
+
 };

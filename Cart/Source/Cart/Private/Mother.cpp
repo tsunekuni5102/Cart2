@@ -3,6 +3,7 @@
 
 #include "Mother.h"
 #include "CustomerAIController.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AMother::AMother()
@@ -11,10 +12,12 @@ AMother::AMother()
 	PrimaryActorTick.bCanEverTick = true;
 
 	// 配置またはスポーンされたら自動でAIが制御
-	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+	//AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 
 	// 使用するAIControllerクラスを指定
-	AIControllerClass = ACustomerAIController::StaticClass();
+	//AIControllerClass = ACustomerAIController::StaticClass();
+
+	Score = 0;
 }
 
 // Called when the game starts or when spawned
@@ -37,4 +40,22 @@ void AMother::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
+void AMother::AddScore(int32 Amount)
+{
+
+	Score += Amount;
+
+	UE_LOG(LogTemp, Warning, TEXT("Mother's score is now %d"), Score);
+
+}
+
+int32 AMother::GetScore() const
+
+{
+
+	return Score;
+
+}
+
 
