@@ -87,6 +87,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
         // Yボタン長押し処理
         EnhancedInput->BindAction(YAction, ETriggerEvent::Started, this, &AMyCharacter::OnYPressed);
         EnhancedInput->BindAction(YAction, ETriggerEvent::Completed, this, &AMyCharacter::OnYReleased);
+        //EnhancedInput->BindAction(HoldYAction, ETriggerEvent::Started, this, &AMyCharacter::TryTransferToysToMother);
     }
 }
 
@@ -307,7 +308,7 @@ void AMyCharacter::OnYPressed()
     bIsHoldingYButton = true;
 
     // 3秒後にチェック
-    GetWorldTimerManager().SetTimer(YButtonHoldTimer, this, &AMyCharacter::TryTransferToysToMother, 3.0f, false);
+    GetWorldTimerManager().SetTimer(YButtonHoldTimer, this, &AMyCharacter::TryTransferToysToMother, 1.0f, false);
 }
 
 void AMyCharacter::OnYReleased()
@@ -323,11 +324,14 @@ void AMyCharacter::TryTransferToysToMother()
     if (!bIsHoldingYButton) return; // 離された場合中止
 
     FVector Start = FollowCamera->GetComponentLocation();
-    FVector End = Start + FollowCamera->GetForwardVector() * 500.0f;
+    FVector End = Start + FollowCamera->GetForwardVector() * 1000.0f;
 
     FHitResult Hit;
     FCollisionQueryParams Params;
-    Params.AddIgnoredActor(this);
+    Params.AddIgnoredActor(this); // 自分自身も無視
+    Params.AddIgnoredActors(AttachedToys); // おもちゃをまとめて無視
+
+    DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 2.0f, 0, 2.0f);
 
     bool bHit = GetWorld()->LineTraceSingleByChannel(
         Hit,
@@ -337,11 +341,22 @@ void AMyCharacter::TryTransferToysToMother()
         Params
     );
 
+    if (Hit.bBlockingHit)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), *Hit.GetActor()->GetName());
+        UE_LOG(LogTemp, Warning, TEXT("Hit Class: %s"), *Hit.GetActor()->GetClass()->GetName());
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Not Hit"));
+    }
+
     if (bHit)
     {
         AMother* Mother = Cast<AMother>(Hit.GetActor());
         if (Mother)
         {
+            //DrawDebugLine(GetWorld(), Start, End, FColor::Blue, false, 2.0f, 0, 2.0f);
             int32 TotalScore = 0;
 
             for (AActor* Toy : AttachedToys)
