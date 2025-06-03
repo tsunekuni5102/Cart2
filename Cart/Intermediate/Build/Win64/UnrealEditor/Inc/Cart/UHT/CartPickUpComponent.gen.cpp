@@ -250,14 +250,14 @@ UCartPickUpComponent::~UCartPickUpComponent() {}
 // End Class UCartPickUpComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_CartPickUpComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_CartPickUpComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UCartPickUpComponent, UCartPickUpComponent::StaticClass, TEXT("UCartPickUpComponent"), &Z_Registration_Info_UClass_UCartPickUpComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCartPickUpComponent), 3402574147U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_CartPickUpComponent_h_3322506307(TEXT("/Script/Cart"),
-	Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_CartPickUpComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_CartPickUpComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_CartPickUpComponent_h_3322506307(TEXT("/Script/Cart"),
+	Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_CartPickUpComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_CartPickUpComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
