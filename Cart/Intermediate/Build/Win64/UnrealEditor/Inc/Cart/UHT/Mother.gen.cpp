@@ -16,9 +16,112 @@ ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 UPackage* Z_Construct_UPackage__Script_Cart();
 // End Cross Module References
 
+// Begin Class AMother Function AddScore
+struct Z_Construct_UFunction_AMother_AddScore_Statics
+{
+	struct Mother_eventAddScore_Parms
+	{
+		int32 Amount;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Score" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbdX\xef\xbf\xbdR\xef\xbf\xbd""A\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdZ\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd(\xef\xbf\xbdu\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd[\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xd1\x8fo\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Mother.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbdX\xef\xbf\xbdR\xef\xbf\xbd""A\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdZ\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd(\xef\xbf\xbdu\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd[\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xd1\x8fo\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMother_AddScore_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Mother_eventAddScore_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMother_AddScore_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMother_AddScore_Statics::NewProp_Amount,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMother_AddScore_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMother_AddScore_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMother, nullptr, "AddScore", nullptr, nullptr, Z_Construct_UFunction_AMother_AddScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMother_AddScore_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMother_AddScore_Statics::Mother_eventAddScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMother_AddScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMother_AddScore_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMother_AddScore_Statics::Mother_eventAddScore_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMother_AddScore()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMother_AddScore_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMother::execAddScore)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->AddScore(Z_Param_Amount);
+	P_NATIVE_END;
+}
+// End Class AMother Function AddScore
+
+// Begin Class AMother Function GetScore
+struct Z_Construct_UFunction_AMother_GetScore_Statics
+{
+	struct Mother_eventGetScore_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Score" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbdX\xef\xbf\xbdR\xef\xbf\xbd""A\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe6\x93\xbe\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd(\xef\xbf\xbdu\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd[\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xd1\x8fo\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Mother.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbdX\xef\xbf\xbdR\xef\xbf\xbd""A\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe6\x93\xbe\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd(\xef\xbf\xbdu\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd[\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xd1\x8fo\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMother_GetScore_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Mother_eventGetScore_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMother_GetScore_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMother_GetScore_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMother_GetScore_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMother_GetScore_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMother, nullptr, "GetScore", nullptr, nullptr, Z_Construct_UFunction_AMother_GetScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMother_GetScore_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMother_GetScore_Statics::Mother_eventGetScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMother_GetScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMother_GetScore_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMother_GetScore_Statics::Mother_eventGetScore_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMother_GetScore()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMother_GetScore_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMother::execGetScore)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetScore();
+	P_NATIVE_END;
+}
+// End Class AMother Function GetScore
+
 // Begin Class AMother
 void AMother::StaticRegisterNativesAMother()
 {
+	UClass* Class = AMother::StaticClass();
+	static const FNameNativePtrPair Funcs[] = {
+		{ "AddScore", &AMother::execAddScore },
+		{ "GetScore", &AMother::execGetScore },
+	};
+	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
 IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AMother);
 UClass* Z_Construct_UClass_AMother_NoRegister()
@@ -33,13 +136,35 @@ struct Z_Construct_UClass_AMother_Statics
 		{ "IncludePath", "Mother.h" },
 		{ "ModuleRelativePath", "Public/Mother.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Score_MetaData[] = {
+		{ "Category", "Score" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xdd\x82\xcc\x83X\xef\xbf\xbdR\xef\xbf\xbd""A(\xef\xbf\xbdu\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd[\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xd1\x8fo\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Mother.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xdd\x82\xcc\x83X\xef\xbf\xbdR\xef\xbf\xbd""A(\xef\xbf\xbdu\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd[\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xd1\x8fo\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)" },
+#endif
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Score;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMother_AddScore, "AddScore" }, // 1520797321
+		{ &Z_Construct_UFunction_AMother_GetScore, "GetScore" }, // 2436324475
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMother>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMother_Statics::NewProp_Score = { "Score", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMother, Score), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Score_MetaData), NewProp_Score_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMother_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMother_Statics::NewProp_Score,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMother_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMother_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_ACharacter,
 	(UObject* (*)())Z_Construct_UPackage__Script_Cart,
@@ -50,12 +175,12 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_AMother_Statics::ClassP
 	"Game",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
-	nullptr,
+	FuncInfo,
+	Z_Construct_UClass_AMother_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
+	UE_ARRAY_COUNT(Z_Construct_UClass_AMother_Statics::PropPointers),
 	0,
 	0x009000A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMother_Statics::Class_MetaDataParams), Z_Construct_UClass_AMother_Statics::Class_MetaDataParams)
@@ -80,10 +205,10 @@ AMother::~AMother() {}
 struct Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_Public_Mother_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMother, AMother::StaticClass, TEXT("AMother"), &Z_Registration_Info_UClass_AMother, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMother), 2994770626U) },
+		{ Z_Construct_UClass_AMother, AMother::StaticClass, TEXT("AMother"), &Z_Registration_Info_UClass_AMother, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMother), 174589530U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_Public_Mother_h_1701677498(TEXT("/Script/Cart"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_Public_Mother_h_1931725259(TEXT("/Script/Cart"),
 	Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_Public_Mother_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_Public_Mother_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

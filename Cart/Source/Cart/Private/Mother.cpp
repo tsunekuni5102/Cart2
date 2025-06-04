@@ -17,6 +17,7 @@ AMother::AMother()
 	// 使用するAIControllerクラスを指定
 	//AIControllerClass = ACustomerAIController::StaticClass();
 
+	//スコアを初期化(ブループリントからもアクセス可能)
 	Score = 0;
 }
 

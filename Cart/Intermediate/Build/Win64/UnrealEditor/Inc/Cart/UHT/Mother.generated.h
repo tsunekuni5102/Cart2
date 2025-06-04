@@ -14,6 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CART_Mother_generated_h
 
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetScore); \
+	DECLARE_FUNCTION(execAddScore);
+
+
 #define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMother(); \
@@ -39,6 +44,7 @@ public: \
 #define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_INCLASS_NO_PURE_DECLS \
 	FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_ENHANCED_CONSTRUCTORS \
 private: \

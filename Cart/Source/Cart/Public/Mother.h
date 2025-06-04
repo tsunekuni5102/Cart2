@@ -26,20 +26,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	// スコアを加算する
-
+	// スコアを加算する(ブループリントから呼び出せる)
+	UFUNCTION(BlueprintCallable, Category = "Score")
 	void AddScore(int32 Amount);
 
-	// スコアを取得する
-
+	// スコアを取得する(ブループリントから呼び出せる)
+	UFUNCTION(BlueprintCallable, Category = "Score")
 	int32 GetScore() const;
 
-private:
-
-	// 現在のスコア
-
+	// 現在のスコア(ブループリントから呼び出せる)
+	UPROPERTY(BlueprintReadOnly, Category = "Score")
 	int32 Score;
-
-
 
 };
