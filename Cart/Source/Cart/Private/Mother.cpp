@@ -49,6 +49,8 @@ void AMother::AddScore(int32 Amount)
 
 	UE_LOG(LogTemp, Warning, TEXT("Mother's score is now %d"), Score);
 
+	OnScoreChanged.Broadcast(Score);
+
 }
 
 int32 AMother::GetScore() const
