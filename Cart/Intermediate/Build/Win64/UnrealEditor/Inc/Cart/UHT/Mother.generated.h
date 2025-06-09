@@ -14,12 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CART_Mother_generated_h
 
-#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_13_DELEGATE \
+CART_API void FOnScoreChanged_DelegateWrapper(const FMulticastScriptDelegate& OnScoreChanged, int32 NewScore);
+
+
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetScore); \
 	DECLARE_FUNCTION(execAddScore);
 
 
-#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMother(); \
 	friend struct Z_Construct_UClass_AMother_Statics; \
@@ -28,7 +32,7 @@ public: \
 	DECLARE_SERIALIZER(AMother)
 
 
-#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMother(AMother&&); \
@@ -40,13 +44,13 @@ public: \
 	NO_API virtual ~AMother();
 
 
-#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_9_PROLOG
-#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_GENERATED_BODY \
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_16_PROLOG
+#define FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Cart2_Cart_Source_Cart_Public_Mother_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_INCLASS_NO_PURE_DECLS \
+	FID_Cart2_Cart_Source_Cart_Public_Mother_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

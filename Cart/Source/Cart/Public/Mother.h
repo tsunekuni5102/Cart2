@@ -4,7 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Delegates/DelegateCombinations.h"
 #include "Mother.generated.h"
+
+
+
+// スコア変更イベントの宣言
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnScoreChanged, int32, NewScore);
+
 
 UCLASS()
 class CART_API AMother : public ACharacter
@@ -26,6 +33,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+
+
+
+
 	// スコアを加算する(ブループリントから呼び出せる)
 	UFUNCTION(BlueprintCallable, Category = "Score")
 	void AddScore(int32 Amount);
@@ -37,5 +48,9 @@ public:
 	// 現在のスコア(ブループリントから呼び出せる)
 	UPROPERTY(BlueprintReadOnly, Category = "Score")
 	int32 Score;
+
+	// スコア変更イベント(ブループリントからバインド可能)
+	UPROPERTY(BlueprintAssignable, Category = "Score")
+	FOnScoreChanged OnScoreChanged;
 
 };
