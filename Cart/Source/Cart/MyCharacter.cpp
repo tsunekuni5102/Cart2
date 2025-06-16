@@ -11,6 +11,11 @@
 
 #include "Sound/SoundBase.h"
 #include "GameFramework/CharacterMovementComponent.h"
+
+#include "ToyGoalListWidget.h"
+#include "ToyGoalManager.h"
+#include "Blueprint/UserWidget.h"
+
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "TimerManager.h"
@@ -32,16 +37,25 @@ void AMyCharacter::BeginPlay()
 {
     Super::BeginPlay();
 
-  /*  if (!FollowCamera)
+    // ToyGoalManagerをレベルから探す（1つだけ配置している前提）
+    TArray<AActor*> FoundManagers;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AToyGoalManager::StaticClass(), FoundManagers);
+
+    if (FoundManagers.Num() > 0)
     {
-        UE_LOG(LogTemp, Error, TEXT("FollowCamera is NULL!"));
+        ToyGoalManagerInstance = Cast<AToyGoalManager>(FoundManagers[0]);
     }
-    else
+
+    // UI作成
+    if (ToyGoalWidgetClass && ToyGoalManagerInstance)
     {
-        UE_LOG(LogTemp, Warning, TEXT("FollowCamera is OK: %s"), *FollowCamera->GetName());
-    }*/
-
-
+        ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
+        if (ToyGoalWidgetInstance)
+        {
+            ToyGoalWidgetInstance->AddToViewport();
+            ToyGoalWidgetInstance->InitializeFromManager(ToyGoalManagerInstance);
+        }
+    }
 
     // 歩行速度を通常スピードに設定
     GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;

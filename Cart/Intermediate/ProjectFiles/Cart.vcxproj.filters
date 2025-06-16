@@ -181,6 +181,9 @@
     <ClCompile Include="..\..\Source\Cart\Private\CustomerCharacter.cpp">
       <Filter>Source\Cart\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\GoalItem.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Cart\Private\Mother.cpp">
       <Filter>Source\Cart\Private</Filter>
     </ClCompile>
@@ -188,6 +191,18 @@
       <Filter>Source\Cart\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Cart\Private\Toy.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\ToyGoal.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\ToyGoalEntryWidget.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\ToyGoalListWidget.cpp">
+      <Filter>Source\Cart\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Private\ToyGoalManager.cpp">
       <Filter>Source\Cart\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Cart\Public">
@@ -206,6 +221,18 @@
       <Filter>Source\Cart\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Cart\Public\Toy.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\ToyGoal.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\ToyGoalEntryWidget.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\ToyGoalListWidget.h">
+      <Filter>Source\Cart\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Cart\Public\ToyGoalManager.h">
       <Filter>Source\Cart\Public</Filter>
     </ClCompile>
     <Filter Include="Source\Cart\UI">

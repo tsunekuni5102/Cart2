@@ -12,6 +12,9 @@ class USoundBase;
 class AToy;
 class AMotherCharacter;
 
+class UToyGoalListWidget;
+class AToyGoalManager;
+
 UCLASS()
 class CART_API AMyCharacter : public ACharacter
 {
@@ -73,6 +76,18 @@ protected:
     // 音
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sound")
     USoundBase* CollisionSound;
+
+    // ウィジェットクラスを指定
+    UPROPERTY(EditDefaultsOnly, Category = "UI")
+    TSubclassOf<UToyGoalListWidget> ToyGoalWidgetClass;
+
+    // 実体
+    UPROPERTY()
+    UToyGoalListWidget* ToyGoalWidgetInstance;
+
+    // レベル内のToyGoalManagerを参照（自動検索）
+    UPROPERTY()
+    AToyGoalManager* ToyGoalManagerInstance;
 
     // 状態管理
     bool bIsSpeedBoosted = false;

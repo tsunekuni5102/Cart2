@@ -12,6 +12,9 @@ void EmptyLinkFunctionForGeneratedCodeMyCharacter() {}
 // Begin Cross Module References
 CART_API UClass* Z_Construct_UClass_AMyCharacter();
 CART_API UClass* Z_Construct_UClass_AMyCharacter_NoRegister();
+CART_API UClass* Z_Construct_UClass_AToyGoalManager_NoRegister();
+CART_API UClass* Z_Construct_UClass_UToyGoalListWidget_NoRegister();
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
@@ -125,6 +128,35 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyGoalWidgetClass_MetaData[] = {
+		{ "Category", "UI" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd""E\xef\xbf\xbd""B\xef\xbf\xbdW\xef\xbf\xbd""F\xef\xbf\xbd""b\xef\xbf\xbdg\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdX\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdw\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "MyCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd""E\xef\xbf\xbd""B\xef\xbf\xbdW\xef\xbf\xbd""F\xef\xbf\xbd""b\xef\xbf\xbdg\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdX\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdw\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyGoalWidgetInstance_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MyCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyGoalManagerInstance_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdToyGoalManager\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdQ\xef\xbf\xbd\xc6\x81i\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj\n" },
+#endif
+		{ "ModuleRelativePath", "MyCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdToyGoalManager\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdQ\xef\xbf\xbd\xc6\x81i\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_IMC_Player;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
@@ -141,6 +173,9 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttachedToys_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_AttachedToys;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CollisionSound;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ToyGoalWidgetClass;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ToyGoalWidgetInstance;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ToyGoalManagerInstance;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -163,6 +198,9 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyCharacter_St
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys_Inner = { "AttachedToys", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys = { "AttachedToys", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, AttachedToys), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachedToys_MetaData), NewProp_AttachedToys_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_CollisionSound = { "CollisionSound", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, CollisionSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CollisionSound_MetaData), NewProp_CollisionSound_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyGoalWidgetClass = { "ToyGoalWidgetClass", nullptr, (EPropertyFlags)0x0024080000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, ToyGoalWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UToyGoalListWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyGoalWidgetClass_MetaData), NewProp_ToyGoalWidgetClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyGoalWidgetInstance = { "ToyGoalWidgetInstance", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, ToyGoalWidgetInstance), Z_Construct_UClass_UToyGoalListWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyGoalWidgetInstance_MetaData), NewProp_ToyGoalWidgetInstance_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyGoalManagerInstance = { "ToyGoalManagerInstance", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, ToyGoalManagerInstance), Z_Construct_UClass_AToyGoalManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyGoalManagerInstance_MetaData), NewProp_ToyGoalManagerInstance_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_IMC_Player,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_MoveAction,
@@ -179,6 +217,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharac
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachedToys,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_CollisionSound,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyGoalWidgetClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyGoalWidgetInstance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_ToyGoalManagerInstance,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyCharacter_Statics::DependentSingletons[])() = {
@@ -218,14 +259,14 @@ AMyCharacter::~AMyCharacter() {}
 // End Class AMyCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_MyCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 1368164166U) },
+		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 891130577U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_MyCharacter_h_4116877042(TEXT("/Script/Cart"),
-	Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_1535089063(TEXT("/Script/Cart"),
+	Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
