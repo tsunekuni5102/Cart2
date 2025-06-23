@@ -14,8 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeToyGoalEntryWidget() {}
 CART_API UClass* Z_Construct_UClass_UToyGoalEntryWidget();
 CART_API UClass* Z_Construct_UClass_UToyGoalEntryWidget_NoRegister();
 CART_API UScriptStruct* Z_Construct_UScriptStruct_FToyGoal();
-UMG_API UClass* Z_Construct_UClass_UImage_NoRegister();
-UMG_API UClass* Z_Construct_UClass_UTextBlock_NoRegister();
+UMG_API UClass* Z_Construct_UClass_UHorizontalBox_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_Cart();
 // End Cross Module References
@@ -89,19 +88,19 @@ struct Z_Construct_UClass_UToyGoalEntryWidget_Statics
 		{ "IncludePath", "ToyGoalEntryWidget.h" },
 		{ "ModuleRelativePath", "Public/ToyGoalEntryWidget.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyImage_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RootBox_MetaData[] = {
 		{ "BindWidget", "" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//UPROPERTY(meta = (BindWidget))\n//class UTextBlock* CountText;\n" },
+#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/ToyGoalEntryWidget.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CountText_MetaData[] = {
-		{ "BindWidget", "" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/ToyGoalEntryWidget.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "UPROPERTY(meta = (BindWidget))\nclass UTextBlock* CountText;" },
+#endif
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ToyImage;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_CountText;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RootBox;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -113,11 +112,9 @@ struct Z_Construct_UClass_UToyGoalEntryWidget_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UToyGoalEntryWidget_Statics::NewProp_ToyImage = { "ToyImage", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UToyGoalEntryWidget, ToyImage), Z_Construct_UClass_UImage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyImage_MetaData), NewProp_ToyImage_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UToyGoalEntryWidget_Statics::NewProp_CountText = { "CountText", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UToyGoalEntryWidget, CountText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CountText_MetaData), NewProp_CountText_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UToyGoalEntryWidget_Statics::NewProp_RootBox = { "RootBox", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UToyGoalEntryWidget, RootBox), Z_Construct_UClass_UHorizontalBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RootBox_MetaData), NewProp_RootBox_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UToyGoalEntryWidget_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UToyGoalEntryWidget_Statics::NewProp_ToyImage,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UToyGoalEntryWidget_Statics::NewProp_CountText,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UToyGoalEntryWidget_Statics::NewProp_RootBox,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UToyGoalEntryWidget_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UToyGoalEntryWidget_Statics::DependentSingletons[])() = {
@@ -161,10 +158,10 @@ UToyGoalEntryWidget::~UToyGoalEntryWidget() {}
 struct Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalEntryWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UToyGoalEntryWidget, UToyGoalEntryWidget::StaticClass, TEXT("UToyGoalEntryWidget"), &Z_Registration_Info_UClass_UToyGoalEntryWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UToyGoalEntryWidget), 2027969390U) },
+		{ Z_Construct_UClass_UToyGoalEntryWidget, UToyGoalEntryWidget::StaticClass, TEXT("UToyGoalEntryWidget"), &Z_Registration_Info_UClass_UToyGoalEntryWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UToyGoalEntryWidget), 2323708545U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalEntryWidget_h_3864804864(TEXT("/Script/Cart"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalEntryWidget_h_1312970668(TEXT("/Script/Cart"),
 	Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalEntryWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalEntryWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

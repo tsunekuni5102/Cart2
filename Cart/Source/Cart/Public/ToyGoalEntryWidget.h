@@ -20,9 +20,14 @@ public:
     void Setup(const FToyGoal& GoalData);
 
 protected:
-    UPROPERTY(meta = (BindWidget))
-    class UImage* ToyImage;
+    //UPROPERTY(meta = (BindWidget))
+    //class UImage* ToyImage;
+
+    //UPROPERTY(meta = (BindWidget))
+    //class UTextBlock* CountText;
+
 
     UPROPERTY(meta = (BindWidget))
-    class UTextBlock* CountText;
+    class UHorizontalBox* RootBox;
+
 };

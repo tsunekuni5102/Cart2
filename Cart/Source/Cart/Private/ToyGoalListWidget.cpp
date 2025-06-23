@@ -9,6 +9,7 @@
 void UToyGoalListWidget::InitializeFromManager(AToyGoalManager* Manager)
 {
     GoalManager = Manager;
+
     RefreshDisplay();
 }
 

@@ -77,17 +77,17 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sound")
     USoundBase* CollisionSound;
 
-    // ウィジェットクラスを指定
-    UPROPERTY(EditDefaultsOnly, Category = "UI")
-    TSubclassOf<UToyGoalListWidget> ToyGoalWidgetClass;
+    //// ウィジェットクラスを指定
+    //UPROPERTY(EditDefaultsOnly, Category = "UI")
+    //TSubclassOf<UToyGoalListWidget> ToyGoalWidgetClass;
 
-    // 実体
-    UPROPERTY()
-    UToyGoalListWidget* ToyGoalWidgetInstance;
+    //// 実体
+    //UPROPERTY()
+    //UToyGoalListWidget* ToyGoalWidgetInstance;
 
-    // レベル内のToyGoalManagerを参照（自動検索）
-    UPROPERTY()
-    AToyGoalManager* ToyGoalManagerInstance;
+    //// レベル内のToyGoalManagerを参照（自動検索）
+    //UPROPERTY()
+    //AToyGoalManager* ToyGoalManagerInstance;
 
     // 状態管理
     bool bIsSpeedBoosted = false;

@@ -37,50 +37,50 @@ void AMyCharacter::BeginPlay()
 {
     Super::BeginPlay();
 
-    // ToyGoalManagerをレベルから探す（1つだけ配置している前提）
-    TArray<AActor*> FoundManagers;
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AToyGoalManager::StaticClass(), FoundManagers);
+    //// ToyGoalManagerをレベルから探す（1つだけ配置している前提）
+    //TArray<AActor*> FoundManagers;
+    //UGameplayStatics::GetAllActorsOfClass(GetWorld(), AToyGoalManager::StaticClass(), FoundManagers);
 
-    if (FoundManagers.Num() > 0)
-    {
-        ToyGoalManagerInstance = Cast<AToyGoalManager>(FoundManagers[0]);
-    }
+    //if (FoundManagers.Num() > 0)
+    //{
+    //    ToyGoalManagerInstance = Cast<AToyGoalManager>(FoundManagers[0]);
+    //}
 
-    //// UI作成
+    ////// UI作成
+    ////if (ToyGoalWidgetClass && ToyGoalManagerInstance)
+    ////{
+    ////    ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
+    ////    if (ToyGoalWidgetInstance)
+    ////    {
+    ////        ToyGoalWidgetInstance->AddToViewport();
+    ////        ToyGoalWidgetInstance->InitializeFromManager(ToyGoalManagerInstance);
+    ////    }
+    ////}
+
+    //UE_LOG(LogTemp, Warning, TEXT("ToyGoalManager search: %d found"), FoundManagers.Num());
+
     //if (ToyGoalWidgetClass && ToyGoalManagerInstance)
     //{
+    //    UE_LOG(LogTemp, Warning, TEXT("Trying to create ToyGoalWidget"));
+
     //    ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
     //    if (ToyGoalWidgetInstance)
     //    {
     //        ToyGoalWidgetInstance->AddToViewport();
+    //        UE_LOG(LogTemp, Warning, TEXT("Widget added to viewport"));
+
     //        ToyGoalWidgetInstance->InitializeFromManager(ToyGoalManagerInstance);
+    //        UE_LOG(LogTemp, Warning, TEXT("Widget initialized from manager"));
+    //    }
+    //    else
+    //    {
+    //        UE_LOG(LogTemp, Error, TEXT("CreateWidget failed"));
     //    }
     //}
-
-    UE_LOG(LogTemp, Warning, TEXT("ToyGoalManager search: %d found"), FoundManagers.Num());
-
-    if (ToyGoalWidgetClass && ToyGoalManagerInstance)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Trying to create ToyGoalWidget"));
-
-        ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
-        if (ToyGoalWidgetInstance)
-        {
-            ToyGoalWidgetInstance->AddToViewport();
-            UE_LOG(LogTemp, Warning, TEXT("Widget added to viewport"));
-
-            ToyGoalWidgetInstance->InitializeFromManager(ToyGoalManagerInstance);
-            UE_LOG(LogTemp, Warning, TEXT("Widget initialized from manager"));
-        }
-        else
-        {
-            UE_LOG(LogTemp, Error, TEXT("CreateWidget failed"));
-        }
-    }
-    else
-    {
-        UE_LOG(LogTemp, Error, TEXT("ToyGoalWidgetClass or ToyGoalManagerInstance is null"));
-    }
+    //else
+    //{
+    //    UE_LOG(LogTemp, Error, TEXT("ToyGoalWidgetClass or ToyGoalManagerInstance is null"));
+    //}
 
     // 歩行速度を通常スピードに設定
     GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
@@ -402,6 +402,7 @@ void AMyCharacter::TryTransferToysToMother()
             {
                 if (AToy* ToyActor = Cast<AToy>(Toy))
                 {
+
                     TotalScore += ToyActor->Score;
                     ToyActor->Destroy(); // おもちゃを削除
                 }
