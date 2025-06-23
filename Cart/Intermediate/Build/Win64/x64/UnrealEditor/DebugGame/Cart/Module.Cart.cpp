@@ -12,6 +12,7 @@
 #include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/UnrealEditor/Inc/Cart/UHT/MySceneCapture2D.gen.cpp"
 #include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/UnrealEditor/Inc/Cart/UHT/Toy.gen.cpp"
 #include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/UnrealEditor/Inc/Cart/UHT/ToyGoal.gen.cpp"
+#include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/UnrealEditor/Inc/Cart/UHT/ToyGoalEntryWidget.gen.cpp"
 #include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/UnrealEditor/Inc/Cart/UHT/ToyGoalListWidget.gen.cpp"
 #include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/UnrealEditor/Inc/Cart/UHT/ToyGoalManager.gen.cpp"
 #include "C:/Users/GA3/Desktop/Cart2/Cart/Intermediate/Build/Win64/x64/UnrealEditor/DebugGame/Cart/PerModuleInline.gen.cpp"

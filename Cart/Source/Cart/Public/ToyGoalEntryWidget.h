@@ -28,6 +28,6 @@ protected:
 
 
     UPROPERTY(meta = (BindWidget))
-    class UHorizontalBox* RootBox;
+    class UVerticalBox* RootBox;
 
 };

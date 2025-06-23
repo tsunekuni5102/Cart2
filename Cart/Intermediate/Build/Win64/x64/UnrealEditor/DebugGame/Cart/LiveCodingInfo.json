@@ -15,6 +15,7 @@
 			"MySceneCapture2D.gen.cpp.obj",
 			"Toy.gen.cpp.obj",
 			"ToyGoal.gen.cpp.obj",
+			"ToyGoalEntryWidget.gen.cpp.obj",
 			"ToyGoalListWidget.gen.cpp.obj",
 			"ToyGoalManager.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
@@ -38,7 +39,6 @@
 			"MyHUD.cpp.obj",
 			"Cart.init.gen.cpp.obj",
 			"MyCharacter.gen.cpp.obj",
-			"ToyGoalEntryWidget.gen.cpp.obj",
 			"MyCharacter.cpp.obj",
 			"ToyGoalEntryWidget.cpp.obj",
 			"ToyGoalListWidget.cpp.obj"

@@ -3,8 +3,8 @@
 
 #include "ToyGoalEntryWidget.h"
 
-#include "Components/HorizontalBox.h"
-#include "Components/HorizontalBoxSlot.h"
+#include "Components/VerticalBox.h"
+#include "Components/VerticalBoxSlot.h"
 
 #include "Components/Image.h"
 #include "Components/TextBlock.h"
@@ -17,11 +17,10 @@ void UToyGoalEntryWidget::Setup(const FToyGoal& GoalData)
 	// 画像を生成
 	UImage* ToyImage = NewObject<UImage>(this);
 	ToyImage->SetBrushFromTexture(GoalData.ToyImage);
-	RootBox->AddChildToHorizontalBox(ToyImage);
+	RootBox->AddChildToVerticalBox(ToyImage);
 
 	// テキストを生成
 	UTextBlock* CountText = NewObject<UTextBlock>(this);
 	CountText->SetText(FText::FromString(FString::Printf(TEXT("× %d / %d"), GoalData.CurrentCount, GoalData.RequiredCount)));
-	RootBox->AddChildToHorizontalBox(CountText);
-
+	RootBox->AddChildToVerticalBox(CountText);
 }
