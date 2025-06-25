@@ -407,11 +407,11 @@ void AMyCharacter::TryTransferToysToMother()
                     TotalScore += ToyActor->Score;
 
                     // ✅ ToyGoalManagerに通知
-                   /* if (ToyGoalManager)
+                    if (ToyGoalManager)
                     {
                         UE_LOG(LogTemp, Warning, TEXT("Toy_Tuuti"));
                         ToyGoalManager->AddToy(ToyActor->ToyID);
-                    }*/
+                    }
 
                     // 破壊
                     ToyActor->Destroy();

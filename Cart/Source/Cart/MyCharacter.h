@@ -30,10 +30,10 @@ protected:
     virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
     virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
-    //UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Goals")
-    //AToyGoalManager* ToyGoalManager;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Goals")
+    AToyGoalManager* ToyGoalManager;
 
-
+    
     // “ü—ÍƒAƒNƒVƒ‡ƒ“
     UPROPERTY(EditDefaultsOnly, Category = "Input")
     UInputMappingContext* IMC_Player;

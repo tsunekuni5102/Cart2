@@ -8,8 +8,11 @@
 /NODEFAULTLIB
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\CartEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.obj"
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\Module.Cart.cpp.obj"
+"C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\MyCharacter.cpp.obj"
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\Toy.cpp.obj"
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\ToyGoalEntryWidget.cpp.obj"
+"C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\ToyGoalListWidget.cpp.obj"
+"C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\ToyGoalManager.cpp.obj"
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\Cart.init.gen.cpp.obj"
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\CartCharacter.gen.cpp.obj"
 "C:\Users\GA3\Desktop\Cart2\Cart\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Cart\CartGameMode.gen.cpp.obj"
