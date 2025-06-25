@@ -13,7 +13,11 @@ void UToyGoalListWidget::InitializeFromManager(AToyGoalManager* Manager)
 
     GoalManager = Manager;
 
-    RefreshDisplay();
+    if (GoalManager)
+    {
+        GoalManager->OnGoalsUpdated.AddDynamic(this, &UToyGoalListWidget::RefreshDisplay);
+        RefreshDisplay(); // ‰‰ñ•\¦‚à
+    }
 }
 
 void UToyGoalListWidget::RefreshDisplay()

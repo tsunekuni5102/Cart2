@@ -1,4 +1,4 @@
-#include "MyCharacter.h"
+ï»¿#include "MyCharacter.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputMappingContext.h"
@@ -27,7 +27,7 @@ AMyCharacter::AMyCharacter()
 {
     PrimaryActorTick.bCanEverTick = true;
 
-    // ƒJƒƒ‰ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì¶¬‚Æ‰Šú‰»
+    // ã‚«ãƒ¡ãƒ©ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ç”Ÿæˆã¨åˆæœŸåŒ–
     FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
     FollowCamera->SetupAttachment(GetCapsuleComponent());
     FollowCamera->bUsePawnControlRotation = true;
@@ -37,7 +37,7 @@ void AMyCharacter::BeginPlay()
 {
     Super::BeginPlay();
 
-    // ToyGoalManager‚ğƒŒƒxƒ‹‚©‚ç’T‚·i1‚Â‚¾‚¯”z’u‚µ‚Ä‚¢‚é‘O’ñj
+    // ToyGoalManagerã‚’ãƒ¬ãƒ™ãƒ«ã‹ã‚‰æ¢ã™ï¼ˆ1ã¤ã ã‘é…ç½®ã—ã¦ã„ã‚‹å‰æï¼‰
     TArray<AActor*> FoundManagers;
     UGameplayStatics::GetAllActorsOfClass(GetWorld(), AToyGoalManager::StaticClass(), FoundManagers);
 
@@ -46,7 +46,7 @@ void AMyCharacter::BeginPlay()
         ToyGoalManagerInstance = Cast<AToyGoalManager>(FoundManagers[0]);
     }
 
-    //// UIì¬
+    //// UIä½œæˆ
     //if (ToyGoalWidgetClass && ToyGoalManagerInstance)
     //{
     //    ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
@@ -82,10 +82,10 @@ void AMyCharacter::BeginPlay()
         UE_LOG(LogTemp, Error, TEXT("ToyGoalWidgetClass or ToyGoalManagerInstance is null"));
     }
 
-    // •às‘¬“x‚ğ’ÊíƒXƒs[ƒh‚Éİ’è
+    // æ­©è¡Œé€Ÿåº¦ã‚’é€šå¸¸ã‚¹ãƒ”ãƒ¼ãƒ‰ã«è¨­å®š
     GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
 
-    // Enhanced Input‚ÌƒZƒbƒgƒAƒbƒviƒvƒŒƒCƒ„[‚É“ü—Íƒ}ƒbƒsƒ“ƒO‚ğ’Ç‰Áj
+    // Enhanced Inputã®ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ï¼ˆãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«å…¥åŠ›ãƒãƒƒãƒ”ãƒ³ã‚°ã‚’è¿½åŠ ï¼‰
     if (APlayerController* PC = Cast<APlayerController>(GetController()))
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem =
@@ -95,35 +95,35 @@ void AMyCharacter::BeginPlay()
         }
     }
 
-    // ŠŠ‚è‚â‚·‚³‚ÆƒuƒŒ[ƒL‚ÉŠÖ‚·‚éƒpƒ‰ƒ[ƒ^’²®iŠµ«‚Ì‰‰o—pj
-    GetCharacterMovement()->BrakingFrictionFactor = 0.3f; // © ’á‚¢‚Ù‚ÇŠµ«‹­‚ß
-    GetCharacterMovement()->BrakingDecelerationWalking = 150.f; // © Œ¸‘¬‚Ì‹­‚³i¬‚³‚¢‚Ù‚ÇŠŠ‚éj
-    GetCharacterMovement()->GroundFriction = 0.6f; // ŠŠ‚è‚â‚·‚³i¬‚³‚­‚·‚é‚Æ‚à‚Á‚ÆŠŠ‚éj
+    // æ»‘ã‚Šã‚„ã™ã•ã¨ãƒ–ãƒ¬ãƒ¼ã‚­ã«é–¢ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿èª¿æ•´ï¼ˆæ…£æ€§ã®æ¼”å‡ºç”¨ï¼‰
+    GetCharacterMovement()->BrakingFrictionFactor = 0.3f; // â† ä½ã„ã»ã©æ…£æ€§å¼·ã‚
+    GetCharacterMovement()->BrakingDecelerationWalking = 150.f; // â† æ¸›é€Ÿã®å¼·ã•ï¼ˆå°ã•ã„ã»ã©æ»‘ã‚‹ï¼‰
+    GetCharacterMovement()->GroundFriction = 0.6f; // æ»‘ã‚Šã‚„ã™ã•ï¼ˆå°ã•ãã™ã‚‹ã¨ã‚‚ã£ã¨æ»‘ã‚‹ï¼‰
 }
 
 void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-    // Enhanced Input ‚ÌƒAƒNƒVƒ‡ƒ“ƒoƒCƒ“ƒfƒBƒ“ƒO
+    // Enhanced Input ã®ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ãƒã‚¤ãƒ³ãƒ‡ã‚£ãƒ³ã‚°
     if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
-        // ˆÚ“®
+        // ç§»å‹•
         EnhancedInput->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMyCharacter::Move);
-        // ‹“_‘€ì
+        // è¦–ç‚¹æ“ä½œ
         EnhancedInput->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMyCharacter::Look);
-        // ƒWƒƒƒ“ƒvŠJn
+        // ã‚¸ãƒ£ãƒ³ãƒ—é–‹å§‹
         EnhancedInput->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-        // ƒWƒƒƒ“ƒvI—¹
+        // ã‚¸ãƒ£ãƒ³ãƒ—çµ‚äº†
         EnhancedInput->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-        // ƒ_ƒbƒVƒ…ŠJn
+        // ãƒ€ãƒƒã‚·ãƒ¥é–‹å§‹
         EnhancedInput->BindAction(SpeedBoostAction, ETriggerEvent::Started, this, &AMyCharacter::StartSpeedBoost);
-        // ƒ_ƒbƒVƒ…I—¹
+        // ãƒ€ãƒƒã‚·ãƒ¥çµ‚äº†
         EnhancedInput->BindAction(SpeedBoostAction, ETriggerEvent::Completed, this, &AMyCharacter::StopSpeedBoost);
-        // ‚¨‚à‚¿‚á‚Ì‘•’…^æ‚èŠO‚µ
+        // ãŠã‚‚ã¡ã‚ƒã®è£…ç€ï¼å–ã‚Šå¤–ã—
         EnhancedInput->BindAction(AttachToyAction, ETriggerEvent::Started, this, &AMyCharacter::HandleAttachToy);
 
-        // Yƒ{ƒ^ƒ“’·‰Ÿ‚µˆ—
+        // Yãƒœã‚¿ãƒ³é•·æŠ¼ã—å‡¦ç†
         EnhancedInput->BindAction(YAction, ETriggerEvent::Started, this, &AMyCharacter::OnYPressed);
         EnhancedInput->BindAction(YAction, ETriggerEvent::Completed, this, &AMyCharacter::OnYReleased);
         //EnhancedInput->BindAction(HoldYAction, ETriggerEvent::Started, this, &AMyCharacter::TryTransferToysToMother);
@@ -132,7 +132,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 void AMyCharacter::Move(const FInputActionValue& Value)
 {
-    // “ü—ÍƒxƒNƒgƒ‹‚ğæ“¾‚µ‚ÄA‘OŒãE¶‰E‚ÉˆÚ“®
+    // å…¥åŠ›ãƒ™ã‚¯ãƒˆãƒ«ã‚’å–å¾—ã—ã¦ã€å‰å¾Œãƒ»å·¦å³ã«ç§»å‹•
     FVector2D MovementVector = Value.Get<FVector2D>();
     if (Controller && (MovementVector != FVector2D::ZeroVector))
     {
@@ -142,32 +142,32 @@ void AMyCharacter::Move(const FInputActionValue& Value)
         const FVector Forward = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
         const FVector Right = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-        AddMovementInput(Forward, MovementVector.Y); // ‘OŒãˆÚ“®
-        AddMovementInput(Right, MovementVector.X); // ¶‰EˆÚ“®
+        AddMovementInput(Forward, MovementVector.Y); // å‰å¾Œç§»å‹•
+        AddMovementInput(Right, MovementVector.X); // å·¦å³ç§»å‹•
     }
 }
 
 void AMyCharacter::Look(const FInputActionValue& Value)
 {
-    // ‹“_‘€ìiƒ}ƒEƒXEƒXƒeƒBƒbƒN‚É‚æ‚éƒJƒƒ‰‚Ì‰ñ“]j
+    // è¦–ç‚¹æ“ä½œï¼ˆãƒã‚¦ã‚¹ãƒ»ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã«ã‚ˆã‚‹ã‚«ãƒ¡ãƒ©ã®å›è»¢ï¼‰
     FVector2D LookAxisVector = Value.Get<FVector2D>();
     if (Controller)
     {
-        AddControllerYawInput(LookAxisVector.X); // ¶‰E‰ñ“]
-        AddControllerPitchInput(LookAxisVector.Y); // ã‰º‰ñ“]
+        AddControllerYawInput(LookAxisVector.X); // å·¦å³å›è»¢
+        AddControllerPitchInput(LookAxisVector.Y); // ä¸Šä¸‹å›è»¢
     }
 }
 
 void AMyCharacter::StartSpeedBoost()
 {
-    // ƒ_ƒbƒVƒ…ó‘Ô‚É‚·‚é
+    // ãƒ€ãƒƒã‚·ãƒ¥çŠ¶æ…‹ã«ã™ã‚‹
     bIsSpeedBoosted = true;
     UpdateMovementSpeed();
 }
 
 void AMyCharacter::StopSpeedBoost()
 {
-    // ’Êí‘¬“x‚É–ß‚·
+    // é€šå¸¸é€Ÿåº¦ã«æˆ»ã™
     bIsSpeedBoosted = false;
     UpdateMovementSpeed();
 }
@@ -176,48 +176,48 @@ void AMyCharacter::NotifyActorBeginOverlap(AActor* OtherActor)
 {
     Super::NotifyActorBeginOverlap(OtherActor);
 
-    //CPU‚É‚Ô‚Â‚©‚Á‚½ê‡‚Ìˆ—
+    //CPUã«ã¶ã¤ã‹ã£ãŸå ´åˆã®å‡¦ç†
     if (OtherActor && OtherActor != this && OtherActor->ActorHasTag("CPU"))
     {
-        // ‰¹‚ğ–Â‚ç‚·
+        // éŸ³ã‚’é³´ã‚‰ã™
         if (CollisionSound)
         {
             UGameplayStatics::PlaySoundAtLocation(this, CollisionSound, GetActorLocation());
         }
 
-        // 3•bŠÔ“®‚¯‚È‚­‚·‚é
+        // 3ç§’é–“å‹•ã‘ãªãã™ã‚‹
         DisableMovementForSeconds(3.0f);
     }
 }
 
 void AMyCharacter::DisableMovementForSeconds(float Seconds)
 {
-    // ƒvƒŒƒCƒ„[‚Ì‘€ì‚ÆˆÚ“®‚ğˆê“I‚É–³Œø‚É‚·‚é
+    // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ“ä½œã¨ç§»å‹•ã‚’ä¸€æ™‚çš„ã«ç„¡åŠ¹ã«ã™ã‚‹
     APlayerController* PC = Cast<APlayerController>(GetController());
     if (PC)
     {
-        DisableInput(PC); // “ü—Í–³Œø
+        DisableInput(PC); // å…¥åŠ›ç„¡åŠ¹
     }
 
-    GetCharacterMovement()->DisableMovement(); // •¨—“I‚È“®‚«‚à’â~
+    GetCharacterMovement()->DisableMovement(); // ç‰©ç†çš„ãªå‹•ãã‚‚åœæ­¢
 
-    // ƒ^ƒCƒ}[‚ÅÄŠJ
+    // ã‚¿ã‚¤ãƒãƒ¼ã§å†é–‹
     GetWorldTimerManager().SetTimer(MovementDisableTimer, this, &AMyCharacter::EnableMovement, Seconds, false);
 }
 
 void AMyCharacter::EnableMovement()
 {
-    // ƒvƒŒƒCƒ„[‚Ì‘€ì‚ÆˆÚ“®‚ğÄ“x—LŒø‚É‚·‚é
+    // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ“ä½œã¨ç§»å‹•ã‚’å†åº¦æœ‰åŠ¹ã«ã™ã‚‹
     APlayerController* PC = Cast<APlayerController>(GetController());
     if (PC)
     {
-        EnableInput(PC); // “ü—Í—LŒø
+        EnableInput(PC); // å…¥åŠ›æœ‰åŠ¹
     }
 
-    GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking); // “®‚«•œŠˆ
+    GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking); // å‹•ãå¾©æ´»
 }
 
-// === Toy ŠÖ˜A ===
+// === Toy é–¢é€£ ===
 
 void AMyCharacter::HandleAttachToy()
 {
@@ -226,14 +226,14 @@ void AMyCharacter::HandleAttachToy()
     FVector Start = FollowCamera->GetComponentLocation();
     FVector End = Start + FollowCamera->GetForwardVector() * ToyAttachDistance;
 
-    float SphereRadius = 30.0f; // ”ÍˆÍ‚ğL‚°‚½‚¢ê‡‚Í‚±‚Ì’l‚ğ‘‚â‚·
+    float SphereRadius = 30.0f; // ç¯„å›²ã‚’åºƒã’ãŸã„å ´åˆã¯ã“ã®å€¤ã‚’å¢—ã‚„ã™
 
-    // ƒqƒbƒgŒ‹‰Ê‚Ì”z—ñ
+    // ãƒ’ãƒƒãƒˆçµæœã®é…åˆ—
     TArray<FHitResult> HitResults;
 
-    // ƒXƒtƒBƒA‚Å•¡”ƒqƒbƒg‚ğ‚İ‚é
+    // ã‚¹ãƒ•ã‚£ã‚¢ã§è¤‡æ•°ãƒ’ãƒƒãƒˆã‚’è©¦ã¿ã‚‹
     FCollisionQueryParams Params;
-    Params.AddIgnoredActor(this); // ©•ª‚Í–³‹
+    Params.AddIgnoredActor(this); // è‡ªåˆ†ã¯ç„¡è¦–
 
     bool bHit = GetWorld()->SweepMultiByChannel(
         HitResults,
@@ -245,7 +245,7 @@ void AMyCharacter::HandleAttachToy()
         Params
     );
 
-    // ƒfƒoƒbƒO•\¦
+    // ãƒ‡ãƒãƒƒã‚°è¡¨ç¤º
     DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 2.0f, 0, 2.0f);
     DrawDebugSphere(GetWorld(), End, SphereRadius, 12, FColor::Red, false, 2.0f);
 
@@ -268,7 +268,7 @@ void AMyCharacter::HandleAttachToy()
             }
         }
 
-        UpdateMovementSpeed(); // ÅŒã‚É‘¬“xXV
+        UpdateMovementSpeed(); // æœ€å¾Œã«é€Ÿåº¦æ›´æ–°
     }
 }
 
@@ -284,7 +284,7 @@ void AMyCharacter::UpdateAttachedToyPosition()
         AActor* Toy = AttachedToys[i];
         if (Toy)
         {
-            // Y•ûŒü‚É•À‚×‚Â‚ÂAZ•ûŒü‚É -20 ‰º‚°‚é
+            // Yæ–¹å‘ã«ä¸¦ã¹ã¤ã¤ã€Zæ–¹å‘ã« -20 ä¸‹ã’ã‚‹
             FVector Offset = FVector(0, i * 30.0f, -20.0f);
             FVector TargetLocation = BaseLocation + Forward * 100.0f + Offset;
             Toy->SetActorLocation(TargetLocation);
@@ -330,7 +330,7 @@ float AMyCharacter::CalculateSpeedWithWeight(float BaseSpeed) const
     }
 
     float AdjustedSpeed = BaseSpeed / FMath::Max(TotalWeight, 1.0f);
-    return FMath::Max(AdjustedSpeed, 200.0f); // Å’á‘¬“x
+    return FMath::Max(AdjustedSpeed, 200.0f); // æœ€ä½é€Ÿåº¦
 }
 
 void AMyCharacter::UpdateMovementSpeed()
@@ -346,7 +346,7 @@ void AMyCharacter::OnYPressed()
 
     bIsHoldingYButton = true;
 
-    // 3•bŒã‚Éƒ`ƒFƒbƒN
+    // 3ç§’å¾Œã«ãƒã‚§ãƒƒã‚¯
     GetWorldTimerManager().SetTimer(YButtonHoldTimer, this, &AMyCharacter::TryTransferToysToMother, 1.0f, false);
 }
 
@@ -354,21 +354,21 @@ void AMyCharacter::OnYReleased()
 {
     bIsHoldingYButton = false;
 
-    // ƒLƒƒƒ“ƒZƒ‹
+    // ã‚­ãƒ£ãƒ³ã‚»ãƒ«
     GetWorldTimerManager().ClearTimer(YButtonHoldTimer);
 }
 
 void AMyCharacter::TryTransferToysToMother()
 {
-    if (!bIsHoldingYButton) return; // —£‚³‚ê‚½ê‡’†~
+    if (!bIsHoldingYButton) return; // é›¢ã•ã‚ŒãŸå ´åˆä¸­æ­¢
 
     FVector Start = FollowCamera->GetComponentLocation();
     FVector End = Start + FollowCamera->GetForwardVector() * 1000.0f;
 
     FHitResult Hit;
     FCollisionQueryParams Params;
-    Params.AddIgnoredActor(this); // ©•ª©g‚à–³‹
-    Params.AddIgnoredActors(AttachedToys); // ‚¨‚à‚¿‚á‚ğ‚Ü‚Æ‚ß‚Ä–³‹
+    Params.AddIgnoredActor(this); // è‡ªåˆ†è‡ªèº«ã‚‚ç„¡è¦–
+    Params.AddIgnoredActors(AttachedToys); // ãŠã‚‚ã¡ã‚ƒã‚’ã¾ã¨ã‚ã¦ç„¡è¦–
 
     DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 2.0f, 0, 2.0f);
 
@@ -403,8 +403,18 @@ void AMyCharacter::TryTransferToysToMother()
                 if (AToy* ToyActor = Cast<AToy>(Toy))
                 {
 
+                    // ã‚¹ã‚³ã‚¢åŠ ç®—
                     TotalScore += ToyActor->Score;
-                    ToyActor->Destroy(); // ‚¨‚à‚¿‚á‚ğíœ
+
+                    // âœ… ToyGoalManagerã«é€šçŸ¥
+                   /* if (ToyGoalManager)
+                    {
+                        UE_LOG(LogTemp, Warning, TEXT("Toy_Tuuti"));
+                        ToyGoalManager->AddToy(ToyActor->ToyID);
+                    }*/
+
+                    // ç ´å£Š
+                    ToyActor->Destroy();
                 }
             }
 

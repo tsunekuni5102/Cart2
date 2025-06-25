@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "ToyGoalManager.h"
@@ -17,8 +17,14 @@ void AToyGoalManager::AddToy(FName ToyID)
     {
         if (Goal.ToyID == ToyID && Goal.CurrentCount < Goal.RequiredCount)
         {
+            UE_LOG(LogTemp, Warning, TEXT("Toy_AddSuru"));
+
             Goal.CurrentCount++;
-            break; // 1‚Â‚¾‚¯‰ÁŽZ
+
+            // âœ… UIæ›´æ–°ã‚¤ãƒ™ãƒ³ãƒˆç™ºè¡Œ
+            OnGoalsUpdated.Broadcast();
+
+            break;
         }
     }
 }

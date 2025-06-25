@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CartModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1aecd29a2b5a48a0e39522afd3ea6ede6210497a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd21d64b6d780dfac0b2ddc0904f94cb8a30df46")]
 [assembly: System.Reflection.AssemblyProductAttribute("CartModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CartModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

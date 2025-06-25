@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "ToyGoalManager.h"
 #include "InputActionValue.h"
 #include "MyCharacter.generated.h"
 
@@ -28,6 +29,10 @@ protected:
     virtual void Tick(float DeltaTime) override;
     virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
     virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Goals")
+    //AToyGoalManager* ToyGoalManager;
+
 
     // “ü—ÍƒAƒNƒVƒ‡ƒ“
     UPROPERTY(EditDefaultsOnly, Category = "Input")

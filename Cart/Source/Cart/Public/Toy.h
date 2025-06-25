@@ -27,6 +27,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Toy")
 	float Weight;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName ToyID;
+
 	//おもちゃのスコア(ゲーム内の得点)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Toy Properties")
 	int32 Score;

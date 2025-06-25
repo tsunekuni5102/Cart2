@@ -7,6 +7,8 @@
 #include "ToyGoal.h"
 #include "ToyGoalManager.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGoalsUpdated);
+
 UCLASS()
 class CART_API AToyGoalManager : public AActor
 {
@@ -28,7 +30,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Toy Goal")
     bool IsAllGoalsCleared() const;
 
+    UPROPERTY(BlueprintAssignable)
+    FOnGoalsUpdated OnGoalsUpdated;
+
     // 目標データを取得（UI用）
     const TArray<FToyGoal>& GetGoals() const { return ToyGoals; }
-
 };

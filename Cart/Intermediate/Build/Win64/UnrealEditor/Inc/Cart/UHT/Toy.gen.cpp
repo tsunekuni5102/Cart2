@@ -144,6 +144,10 @@ struct Z_Construct_UClass_AToy_Statics
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\x8f""d\xef\xbf\xbd\xef\xbf\xbd(kg\xef\xbf\xbd\xc8\x82\xef\xbf\xbd)" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyID_MetaData[] = {
+		{ "Category", "Toy" },
+		{ "ModuleRelativePath", "Public/Toy.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Score_MetaData[] = {
 		{ "Category", "Toy Properties" },
 #if !UE_BUILD_SHIPPING
@@ -156,6 +160,7 @@ struct Z_Construct_UClass_AToy_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Weight;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_ToyID;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Score;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
@@ -170,9 +175,11 @@ struct Z_Construct_UClass_AToy_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AToy_Statics::NewProp_Weight = { "Weight", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AToy, Weight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Weight_MetaData), NewProp_Weight_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AToy_Statics::NewProp_ToyID = { "ToyID", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AToy, ToyID), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyID_MetaData), NewProp_ToyID_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AToy_Statics::NewProp_Score = { "Score", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AToy, Score), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Score_MetaData), NewProp_Score_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AToy_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToy_Statics::NewProp_Weight,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToy_Statics::NewProp_ToyID,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToy_Statics::NewProp_Score,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AToy_Statics::PropPointers) < 2048);
@@ -213,14 +220,14 @@ AToy::~AToy() {}
 // End Class AToy
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_Public_Toy_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_Toy_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AToy, AToy::StaticClass, TEXT("AToy"), &Z_Registration_Info_UClass_AToy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AToy), 3744645724U) },
+		{ Z_Construct_UClass_AToy, AToy::StaticClass, TEXT("AToy"), &Z_Registration_Info_UClass_AToy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AToy), 1199700407U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_Public_Toy_h_3006044194(TEXT("/Script/Cart"),
-	Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_Public_Toy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_Public_Toy_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_Toy_h_2581056857(TEXT("/Script/Cart"),
+	Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_Toy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_Toy_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

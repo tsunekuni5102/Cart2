@@ -12,7 +12,9 @@ public class Cart : ModuleRules
 			"Core", "CoreUObject", "Engine", "InputCore",
 			"EnhancedInput",
 			"NavigationSystem",
-			"AIModule"          // AI関連も使っていれば必須
+			"AIModule",          // AI関連も使っていれば必須
+			"Slate",       // ← 追加
+			"SlateCore"    // ← 追加
 		});
 	}
 }

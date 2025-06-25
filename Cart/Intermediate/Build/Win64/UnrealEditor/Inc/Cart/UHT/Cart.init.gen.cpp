@@ -7,6 +7,7 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCart_init() {}
+	CART_API UFunction* Z_Construct_UDelegateFunction_Cart_OnGoalsUpdated__DelegateSignature();
 	CART_API UFunction* Z_Construct_UDelegateFunction_Cart_OnPickUp__DelegateSignature();
 	CART_API UFunction* Z_Construct_UDelegateFunction_Cart_OnScoreChanged__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_Cart;
@@ -15,6 +16,7 @@ void EmptyLinkFunctionForGeneratedCodeCart_init() {}
 		if (!Z_Registration_Info_UPackage__Script_Cart.OuterSingleton)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_Cart_OnGoalsUpdated__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_Cart_OnPickUp__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_Cart_OnScoreChanged__DelegateSignature,
 			};
@@ -23,13 +25,13 @@ void EmptyLinkFunctionForGeneratedCodeCart_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x089427C3,
-				0x1D97F0F6,
+				0x511115DF,
+				0x902F22D0,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Cart.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_Cart.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Cart(Z_Construct_UPackage__Script_Cart, TEXT("/Script/Cart"), Z_Registration_Info_UPackage__Script_Cart, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x089427C3, 0x1D97F0F6));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Cart(Z_Construct_UPackage__Script_Cart, TEXT("/Script/Cart"), Z_Registration_Info_UPackage__Script_Cart, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x511115DF, 0x902F22D0));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
