@@ -45,31 +45,18 @@ void AMyCharacter::BeginPlay()
         ToyGoalManagerInstance = Cast<AToyGoalManager>(FoundManagers[0]);
     }
 
-    //// UI作成
-    //if (ToyGoalWidgetClass && ToyGoalManagerInstance)
-    //{
-    //    ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
-    //    if (ToyGoalWidgetInstance)
-    //    {
-    //        ToyGoalWidgetInstance->AddToViewport();
-    //        ToyGoalWidgetInstance->InitializeFromManager(ToyGoalManagerInstance);
-    //    }
-    //}
-
     UE_LOG(LogTemp, Warning, TEXT("ToyGoalManager search: %d found"), FoundManagers.Num());
 
+    //UI作成する
     if (ToyGoalWidgetClass && ToyGoalManagerInstance)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Trying to create ToyGoalWidget"));
-
         ToyGoalWidgetInstance = CreateWidget<UToyGoalListWidget>(GetWorld(), ToyGoalWidgetClass);
+
         if (ToyGoalWidgetInstance)
         {
             ToyGoalWidgetInstance->AddToViewport();
-            UE_LOG(LogTemp, Warning, TEXT("Widget added to viewport"));
 
             ToyGoalWidgetInstance->InitializeFromManager(ToyGoalManagerInstance);
-            UE_LOG(LogTemp, Warning, TEXT("Widget initialized from manager"));
         }
         else
         {

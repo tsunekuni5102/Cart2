@@ -11,11 +11,11 @@ AMother::AMother()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	// 配置またはスポーンされたら自動でAIが制御
-	//AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+	 //配置またはスポーンされたら自動でAIが制御
+	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 
-	// 使用するAIControllerクラスを指定
-	//AIControllerClass = ACustomerAIController::StaticClass();
+	 ///使用するAIControllerクラスを指定
+	AIControllerClass = ACustomerAIController::StaticClass();
 
 	//スコアを初期化(ブループリントからもアクセス可能)
 	Score = 0;

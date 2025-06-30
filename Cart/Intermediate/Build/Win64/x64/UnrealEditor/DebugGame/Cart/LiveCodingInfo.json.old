@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Cart.cpp.obj": [
+			"Cart.init.gen.cpp.obj",
 			"CartCharacter.gen.cpp.obj",
 			"CartGameMode.gen.cpp.obj",
 			"CartPickUpComponent.gen.cpp.obj",
@@ -11,6 +12,7 @@
 			"CustomerCharacter.gen.cpp.obj",
 			"Mother.gen.cpp.obj",
 			"MovableObject.gen.cpp.obj",
+			"MyCharacter.gen.cpp.obj",
 			"MyGameModeBase.gen.cpp.obj",
 			"MySceneCapture2D.gen.cpp.obj",
 			"Toy.gen.cpp.obj",
@@ -25,6 +27,7 @@
 			"CartPickUpComponent.cpp.obj",
 			"CartProjectile.cpp.obj",
 			"CartWeaponComponent.cpp.obj",
+			"MyCharacter.cpp.obj",
 			"MyClass.cpp.obj",
 			"MyGameModeBase.cpp.obj",
 			"MySceneCapture2D.cpp.obj",
@@ -38,10 +41,7 @@
 			"ToyGoalEntryWidget.cpp.obj",
 			"ToyGoalListWidget.cpp.obj",
 			"ToyGoalManager.cpp.obj",
-			"MyHUD.cpp.obj",
-			"Cart.init.gen.cpp.obj",
-			"MyCharacter.gen.cpp.obj",
-			"MyCharacter.cpp.obj"
+			"MyHUD.cpp.obj"
 		]
 	}
 }

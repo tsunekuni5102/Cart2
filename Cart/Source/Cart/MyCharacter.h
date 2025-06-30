@@ -66,7 +66,7 @@ protected:
     float NormalSpeed = 600.0f;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Movement")
-    float BoostedSpeed = 900.0f;
+    float BoostedSpeed = 1800.0f;
 
     // ‚¨‚à‚¿‚áŠÖ˜A
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Toy")
