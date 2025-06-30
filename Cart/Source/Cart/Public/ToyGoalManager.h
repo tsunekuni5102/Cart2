@@ -30,6 +30,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Toy Goal")
     bool IsAllGoalsCleared() const;
 
+    UPROPERTY(BlueprintReadOnly, Category = "Goal")
+    bool bIsCleared = false;
+
     UPROPERTY(BlueprintAssignable)
     FOnGoalsUpdated OnGoalsUpdated;
 

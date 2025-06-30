@@ -30,9 +30,6 @@ protected:
     virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
     virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Goals")
-    AToyGoalManager* ToyGoalManager;
-
     
     // 入力アクション
     UPROPERTY(EditDefaultsOnly, Category = "Input")
@@ -91,7 +88,7 @@ protected:
     UToyGoalListWidget* ToyGoalWidgetInstance;
 
     // レベル内のToyGoalManagerを参照（自動検索）
-    UPROPERTY()
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ToyGoal")
     AToyGoalManager* ToyGoalManagerInstance;
 
     // 状態管理

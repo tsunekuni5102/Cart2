@@ -59,41 +59,5 @@ void UToyGoalEntryWidget::Setup(const FToyGoal& GoalData)
         VBoxSlot->SetSize(FSlateChildSize(ESlateSizeRule::Automatic));
         VBoxSlot->SetHorizontalAlignment(HAlign_Left); // 任意
     }
-
-    //   // Imageの生成
-    //   UImage* ToyImage = NewObject<UImage>(this);
-
-    //   // ブラシを作成して画像を設定
-    //   FSlateBrush Brush;
-    //   Brush.SetResourceObject(GoalData.ToyImage); // テクスチャを設定
-    //   Brush.ImageSize = FVector2D(100, 100);      // ブラシ上の画像サイズ（あっても良いがSizeBox優先）
-    //   Brush.DrawAs = ESlateBrushDrawType::Image; // ← これが Stretch=None 相当
-
-    //   ToyImage->SetBrush(Brush);
-
-    //   // SizeBoxを作成してサイズを固定
-    //   USizeBox* ImageBox = NewObject<USizeBox>(this);
-    //   ImageBox->SetWidthOverride(100.f);
-    //   ImageBox->SetHeightOverride(100.f);
-    //   ImageBox->AddChild(ToyImage);
-
-    //   // SizeBoxをVerticalBoxに追加
-    //   UVerticalBoxSlot* VBoxSlot = RootBox->AddChildToVerticalBox(ImageBox);
-    //   if (!VBoxSlot)
-    //   {
-    //       UE_LOG(LogTemp, Error, TEXT("VBoxSlot is null! AddChildToVerticalBox failed."));
-    //   }
-    //   
-    //   if (VBoxSlot)
-    //   {
-    //       UE_LOG(LogTemp, Error, TEXT("yabayabayaba"));
-    //       VBoxSlot->SetSize(FSlateChildSize(ESlateSizeRule::Automatic)); // 自動サイズ（Fillではない）
-    //       VBoxSlot->SetHorizontalAlignment(HAlign_Center);               // 必要なら中央寄せ
-    //   }
-
-       //// テキストを生成
-       //UTextBlock* CountText = NewObject<UTextBlock>(this);
-       //CountText->SetText(FText::FromString(FString::Printf(TEXT("× %d / %d"), GoalData.CurrentCount, GoalData.RequiredCount)));
-       //RootBox->AddChildToVerticalBox(CountText);
 }
 

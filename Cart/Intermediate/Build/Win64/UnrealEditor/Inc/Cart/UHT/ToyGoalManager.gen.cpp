@@ -179,12 +179,18 @@ struct Z_Construct_UClass_AToyGoalManager_Statics
 		{ "ToolTip", "\xef\xbf\xbdG\xef\xbf\xbd""f\xef\xbf\xbd""B\xef\xbf\xbd^\xef\xbf\xbd\xc5\x90\xdd\x92\xe8\x82\xb7\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdW\xef\xbf\xbd\xda\x95W" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsCleared_MetaData[] = {
+		{ "Category", "Goal" },
+		{ "ModuleRelativePath", "Public/ToyGoalManager.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnGoalsUpdated_MetaData[] = {
 		{ "ModuleRelativePath", "Public/ToyGoalManager.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ToyGoals_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ToyGoals;
+	static void NewProp_bIsCleared_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsCleared;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnGoalsUpdated;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
@@ -200,10 +206,16 @@ struct Z_Construct_UClass_AToyGoalManager_Statics
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AToyGoalManager_Statics::NewProp_ToyGoals_Inner = { "ToyGoals", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FToyGoal, METADATA_PARAMS(0, nullptr) }; // 2187104738
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AToyGoalManager_Statics::NewProp_ToyGoals = { "ToyGoals", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AToyGoalManager, ToyGoals), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ToyGoals_MetaData), NewProp_ToyGoals_MetaData) }; // 2187104738
+void Z_Construct_UClass_AToyGoalManager_Statics::NewProp_bIsCleared_SetBit(void* Obj)
+{
+	((AToyGoalManager*)Obj)->bIsCleared = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AToyGoalManager_Statics::NewProp_bIsCleared = { "bIsCleared", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AToyGoalManager), &Z_Construct_UClass_AToyGoalManager_Statics::NewProp_bIsCleared_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsCleared_MetaData), NewProp_bIsCleared_MetaData) };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AToyGoalManager_Statics::NewProp_OnGoalsUpdated = { "OnGoalsUpdated", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AToyGoalManager, OnGoalsUpdated), Z_Construct_UDelegateFunction_Cart_OnGoalsUpdated__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnGoalsUpdated_MetaData), NewProp_OnGoalsUpdated_MetaData) }; // 4213662195
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AToyGoalManager_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToyGoalManager_Statics::NewProp_ToyGoals_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToyGoalManager_Statics::NewProp_ToyGoals,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToyGoalManager_Statics::NewProp_bIsCleared,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AToyGoalManager_Statics::NewProp_OnGoalsUpdated,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AToyGoalManager_Statics::PropPointers) < 2048);
@@ -247,10 +259,10 @@ AToyGoalManager::~AToyGoalManager() {}
 struct Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AToyGoalManager, AToyGoalManager::StaticClass, TEXT("AToyGoalManager"), &Z_Registration_Info_UClass_AToyGoalManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AToyGoalManager), 1857221928U) },
+		{ Z_Construct_UClass_AToyGoalManager, AToyGoalManager::StaticClass, TEXT("AToyGoalManager"), &Z_Registration_Info_UClass_AToyGoalManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AToyGoalManager), 3433489144U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_1088304609(TEXT("/Script/Cart"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_1469975164(TEXT("/Script/Cart"),
 	Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

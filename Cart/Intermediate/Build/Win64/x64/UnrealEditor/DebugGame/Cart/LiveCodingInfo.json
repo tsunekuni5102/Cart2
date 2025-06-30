@@ -17,7 +17,6 @@
 			"ToyGoal.gen.cpp.obj",
 			"ToyGoalEntryWidget.gen.cpp.obj",
 			"ToyGoalListWidget.gen.cpp.obj",
-			"ToyGoalManager.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
 			"Cart.cpp.obj",
 			"CartCharacter.cpp.obj",
@@ -35,13 +34,14 @@
 			"MovableObject.cpp.obj",
 			"Toy.cpp.obj",
 			"ToyGoal.cpp.obj",
-			"ToyGoalEntryWidget.cpp.obj",
-			"ToyGoalListWidget.cpp.obj",
-			"ToyGoalManager.cpp.obj",
 			"MyHUD.cpp.obj",
 			"Cart.init.gen.cpp.obj",
 			"MyCharacter.gen.cpp.obj",
-			"MyCharacter.cpp.obj"
+			"ToyGoalManager.gen.cpp.obj",
+			"MyCharacter.cpp.obj",
+			"ToyGoalEntryWidget.cpp.obj",
+			"ToyGoalListWidget.cpp.obj",
+			"ToyGoalManager.cpp.obj"
 		]
 	}
 }

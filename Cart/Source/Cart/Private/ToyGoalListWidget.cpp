@@ -22,15 +22,6 @@ void UToyGoalListWidget::InitializeFromManager(AToyGoalManager* Manager)
 
 void UToyGoalListWidget::RefreshDisplay()
 {
-    //if(GoalManager)
-    //    UE_LOG(LogTemp, Warning, TEXT("GM_nasi"));
-
-    //if(GoalListBox)
-    //    UE_LOG(LogTemp, Warning, TEXT("GLB_nasi"));
-
-    //if(GoalEntryWidgetClass)
-        UE_LOG(LogTemp, Warning, TEXT("GEW_nasi"));
-
     if (!GoalManager || !GoalListBox || !GoalEntryWidgetClass) return;
 
     // 既存のウィジェットエントリをすべて削除
@@ -49,9 +40,7 @@ void UToyGoalListWidget::RefreshDisplay()
         {
             if(Goal.ToyImage)
             {
-                UE_LOG(LogTemp, Warning, TEXT("haiteruyo"));
             }
-            UE_LOG(LogTemp, Warning, TEXT("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
             // エントリに目標データを設定
             Entry->Setup(Goal);
             // エントリをリストボックスに追加

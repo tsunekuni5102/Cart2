@@ -37,10 +37,9 @@ void AMyCharacter::BeginPlay()
 {
     Super::BeginPlay();
 
-    // ToyGoalManagerをレベルから探す（1つだけ配置している前提）
+    //GoalManagerをレベル上から自動取得する
     TArray<AActor*> FoundManagers;
     UGameplayStatics::GetAllActorsOfClass(GetWorld(), AToyGoalManager::StaticClass(), FoundManagers);
-
     if (FoundManagers.Num() > 0)
     {
         ToyGoalManagerInstance = Cast<AToyGoalManager>(FoundManagers[0]);
@@ -407,10 +406,9 @@ void AMyCharacter::TryTransferToysToMother()
                     TotalScore += ToyActor->Score;
 
                     // ✅ ToyGoalManagerに通知
-                    if (ToyGoalManager)
+                    if (ToyGoalManagerInstance)
                     {
-                        UE_LOG(LogTemp, Warning, TEXT("Toy_Tuuti"));
-                        ToyGoalManager->AddToy(ToyActor->ToyID);
+                        ToyGoalManagerInstance->AddToy(ToyActor->ToyID);
                     }
 
                     // 破壊

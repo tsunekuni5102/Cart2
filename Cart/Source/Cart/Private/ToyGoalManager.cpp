@@ -27,6 +27,14 @@ void AToyGoalManager::AddToy(FName ToyID)
             break;
         }
     }
+
+    // ここでクリア判定
+    if (IsAllGoalsCleared())
+    {
+        //クリアフラグをtrueに
+        bIsCleared = true;
+        UE_LOG(LogTemp, Warning, TEXT("All Goals Cleared!"));
+    }
 }
 
 bool AToyGoalManager::IsAllGoalsCleared() const
