@@ -27,21 +27,21 @@
 			"CartPickUpComponent.cpp.obj",
 			"CartProjectile.cpp.obj",
 			"CartWeaponComponent.cpp.obj",
+			"MyCharacter.cpp.obj",
 			"MyClass.cpp.obj",
 			"MyGameModeBase.cpp.obj",
 			"MySceneCapture2D.cpp.obj",
 			"CustomerAIController.cpp.obj",
 			"CustomerCharacter.cpp.obj",
 			"GoalItem.cpp.obj",
+			"Mother.cpp.obj",
 			"MovableObject.cpp.obj",
 			"Toy.cpp.obj",
 			"ToyGoal.cpp.obj",
 			"ToyGoalEntryWidget.cpp.obj",
 			"ToyGoalListWidget.cpp.obj",
 			"ToyGoalManager.cpp.obj",
-			"MyHUD.cpp.obj",
-			"MyCharacter.cpp.obj",
-			"Mother.cpp.obj"
+			"MyHUD.cpp.obj"
 		]
 	}
 }

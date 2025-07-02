@@ -14,16 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CART_ToyGoalManager_generated_h
 
-#define FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_10_DELEGATE \
+#define FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_10_DELEGATE \
 CART_API void FOnGoalsUpdated_DelegateWrapper(const FMulticastScriptDelegate& OnGoalsUpdated);
 
 
-#define FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execIsAllGoalsCleared); \
 	DECLARE_FUNCTION(execAddToy);
 
 
-#define FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAToyGoalManager(); \
 	friend struct Z_Construct_UClass_AToyGoalManager_Statics; \
@@ -32,7 +32,7 @@ public: \
 	DECLARE_SERIALIZER(AToyGoalManager)
 
 
-#define FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AToyGoalManager(AToyGoalManager&&); \
@@ -44,13 +44,13 @@ public: \
 	NO_API virtual ~AToyGoalManager();
 
 
-#define FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_12_PROLOG
-#define FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_GENERATED_BODY \
+#define FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_12_PROLOG
+#define FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +58,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> CART_API UClass* StaticClass<class AToyGoalManager>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h
+#define CURRENT_FILE_ID FID_Cart2_Cart_Source_Cart_Public_ToyGoalManager_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
