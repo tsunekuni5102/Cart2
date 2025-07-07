@@ -1,3 +1,2 @@
-2025/06/23-10:43:38.501 48f0 Reusing MANIFEST C:/Users/GA3/Desktop/Cart2/Cart/Saved/webcache_4430\Local Storage\leveldb/MANIFEST-000001
-2025/06/23-10:43:38.510 48f0 Recovering log #3
-2025/06/23-10:43:38.511 48f0 Reusing old log C:/Users/GA3/Desktop/Cart2/Cart/Saved/webcache_4430\Local Storage\leveldb/000003.log 
+2025/07/07-14:13:26.241 331c Creating DB C:/Users/GA3/Desktop/Cart2/Cart/Saved/webcache_4430\Local Storage\leveldb since it was missing.
+2025/07/07-14:13:26.268 331c Reusing MANIFEST C:/Users/GA3/Desktop/Cart2/Cart/Saved/webcache_4430\Local Storage\leveldb/MANIFEST-000001
