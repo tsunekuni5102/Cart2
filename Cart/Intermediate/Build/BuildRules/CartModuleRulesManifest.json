@@ -1,9 +1,9 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\GA3\\Desktop\\Cart2\\Cart\\Source\\Cart\\Cart.Build.cs",
-		"C:\\Users\\GA3\\Desktop\\Cart2\\Cart\\Plugins\\VisualStudioTools\\Source\\VisualStudioTools\\VisualStudioTools.Build.cs",
-		"C:\\Users\\GA3\\Desktop\\Cart2\\Cart\\Source\\Cart.Target.cs",
-		"C:\\Users\\GA3\\Desktop\\Cart2\\Cart\\Source\\CartEditor.Target.cs"
+		"C:\\2cart\\Cart\\Source\\Cart\\Cart.Build.cs",
+		"C:\\2cart\\Cart\\Plugins\\VisualStudioTools\\Source\\VisualStudioTools\\VisualStudioTools.Build.cs",
+		"C:\\2cart\\Cart\\Source\\Cart.Target.cs",
+		"C:\\2cart\\Cart\\Source\\CartEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.4"
 }
