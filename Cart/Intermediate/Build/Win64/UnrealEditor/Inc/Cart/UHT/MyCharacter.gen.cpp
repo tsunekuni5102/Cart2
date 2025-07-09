@@ -79,6 +79,16 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "MyCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsInvincible_MetaData[] = {
+		{ "Category", "State" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdG\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "MyCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdG\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FollowCamera_MetaData[] = {
 		{ "Category", "Camera" },
 #if !UE_BUILD_SHIPPING
@@ -131,32 +141,20 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyGoalWidgetClass_MetaData[] = {
 		{ "Category", "UI" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd""E\xef\xbf\xbd""B\xef\xbf\xbdW\xef\xbf\xbd""F\xef\xbf\xbd""b\xef\xbf\xbdg\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdX\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdw\xef\xbf\xbd\xef\xbf\xbd\n" },
+		{ "Comment", "// UI\n" },
 #endif
 		{ "ModuleRelativePath", "MyCharacter.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd""E\xef\xbf\xbd""B\xef\xbf\xbdW\xef\xbf\xbd""F\xef\xbf\xbd""b\xef\xbf\xbdg\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdX\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdw\xef\xbf\xbd\xef\xbf\xbd" },
+		{ "ToolTip", "UI" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyGoalWidgetInstance_MetaData[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "MyCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ToyGoalManagerInstance_MetaData[] = {
 		{ "Category", "ToyGoal" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdToyGoalManager\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdQ\xef\xbf\xbd\xc6\x81i\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj\n" },
-#endif
 		{ "ModuleRelativePath", "MyCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdToyGoalManager\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdQ\xef\xbf\xbd\xc6\x81i\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_IMC_Player;
@@ -167,6 +165,8 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttachToyAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_HoldYAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_YAction;
+	static void NewProp_bIsInvincible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsInvincible;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FollowCamera;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_NormalSpeed;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_BoostedSpeed;
@@ -192,6 +192,11 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_S
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachToyAction = { "AttachToyAction", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, AttachToyAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachToyAction_MetaData), NewProp_AttachToyAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_HoldYAction = { "HoldYAction", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, HoldYAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HoldYAction_MetaData), NewProp_HoldYAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_YAction = { "YAction", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, YAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_YAction_MetaData), NewProp_YAction_MetaData) };
+void Z_Construct_UClass_AMyCharacter_Statics::NewProp_bIsInvincible_SetBit(void* Obj)
+{
+	((AMyCharacter*)Obj)->bIsInvincible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_bIsInvincible = { "bIsInvincible", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyCharacter), &Z_Construct_UClass_AMyCharacter_Statics::NewProp_bIsInvincible_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsInvincible_MetaData), NewProp_bIsInvincible_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_FollowCamera = { "FollowCamera", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, FollowCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FollowCamera_MetaData), NewProp_FollowCamera_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_NormalSpeed = { "NormalSpeed", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, NormalSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NormalSpeed_MetaData), NewProp_NormalSpeed_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_BoostedSpeed = { "BoostedSpeed", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, BoostedSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoostedSpeed_MetaData), NewProp_BoostedSpeed_MetaData) };
@@ -211,6 +216,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharac
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AttachToyAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_HoldYAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_YAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_bIsInvincible,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_FollowCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_NormalSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_BoostedSpeed,
@@ -260,14 +266,14 @@ AMyCharacter::~AMyCharacter() {}
 // End Class AMyCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 4034741337U) },
+		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 864634759U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_4089593047(TEXT("/Script/Cart"),
-	Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_2cart_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_1687994439(TEXT("/Script/Cart"),
+	Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GA3_Desktop_Cart2_Cart_Source_Cart_MyCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

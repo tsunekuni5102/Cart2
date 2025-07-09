@@ -30,7 +30,6 @@ protected:
     virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
     virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
-    
     // 入力アクション
     UPROPERTY(EditDefaultsOnly, Category = "Input")
     UInputMappingContext* IMC_Player;
@@ -56,6 +55,9 @@ protected:
     UPROPERTY(EditDefaultsOnly, Category = "Input")
     UInputAction* YAction;
 
+    // 無敵状態
+    UPROPERTY(BlueprintReadOnly, Category = "State")
+    bool bIsInvincible = false;
 
     // カメラ
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
@@ -79,15 +81,13 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sound")
     USoundBase* CollisionSound;
 
-    // ウィジェットクラスを指定
+    // UI
     UPROPERTY(EditDefaultsOnly, Category = "UI")
     TSubclassOf<UToyGoalListWidget> ToyGoalWidgetClass;
 
-    // 実体
     UPROPERTY()
     UToyGoalListWidget* ToyGoalWidgetInstance;
 
-    // レベル内のToyGoalManagerを参照（自動検索）
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ToyGoal")
     AToyGoalManager* ToyGoalManagerInstance;
 
@@ -97,14 +97,15 @@ protected:
     float HoldTime = 3.0f;
     FTimerHandle MovementDisableTimer;
     FTimerHandle HoldTimerHandle;
+    FTimerHandle InvincibleTimerHandle;
 
-    // 移動と視点操作
+    // 移動
     void Move(const FInputActionValue& Value);
     void Look(const FInputActionValue& Value);
     void StartSpeedBoost();
     void StopSpeedBoost();
 
-    // おもちゃの装着/取り外し
+    // おもちゃ
     void HandleAttachToy();
     void UpdateAttachedToyPosition();
     void UpdateSpeedByTotalWeight();
@@ -115,13 +116,16 @@ protected:
     void DisableMovementForSeconds(float Seconds);
     void EnableMovement();
 
-    // Yボタン長押し関連
+    // 無敵
+    void StartInvincibility(float Duration);
+    void EndInvincibility();
+
+    // Yボタン
     void OnHoldYStart();
     void OnHoldYEnd();
     void TryTransferToysToMother();
     bool IsLookingAtMother(AActor*& OutMotherActor);
 
-    // Timerによる長押し処理
     FTimerHandle YButtonHoldTimer;
     bool bIsHoldingYButton = false;
 

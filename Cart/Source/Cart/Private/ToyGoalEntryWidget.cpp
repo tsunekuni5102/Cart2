@@ -43,14 +43,20 @@ void UToyGoalEntryWidget::Setup(const FToyGoal& GoalData)
 
     // テキスト
     UTextBlock* CountText = NewObject<UTextBlock>(this);
-    CountText->SetText(FText::FromString(FString::Printf(TEXT("× %d / %d"), GoalData.CurrentCount, GoalData.RequiredCount)));
+    CountText->SetText(FText::GetEmpty());
+    CountText->SetText(FText::FromString(FString::Printf(TEXT("%d / %d"), GoalData.CurrentCount, GoalData.RequiredCount)));
 
-    UHorizontalBoxSlot* TextSlot = RowBox->AddChildToHorizontalBox(CountText);
-    if (TextSlot)
-    {
-        TextSlot->SetPadding(FMargin(10, 0, 0, 0));
-        TextSlot->SetVerticalAlignment(VAlign_Center);
-    }
+
+    // 念のためフォント指定
+    FSlateFontInfo FontInfo = CountText->GetFont();
+    FontInfo.Size = 24;
+    CountText->SetFont(FontInfo);
+
+    // 子要素を手動でクリア（既存の謎TextBlock排除）
+    RowBox->ClearChildren();
+
+    RowBox->AddChildToHorizontalBox(ImageBox);
+    RowBox->AddChildToHorizontalBox(CountText);
 
     // RowBox を RootBox に追加（縦に積む）
     UVerticalBoxSlot* VBoxSlot = RootBox->AddChildToVerticalBox(RowBox);
