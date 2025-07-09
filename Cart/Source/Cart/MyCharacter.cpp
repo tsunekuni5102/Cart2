@@ -162,18 +162,52 @@ void AMyCharacter::NotifyActorBeginOverlap(AActor* OtherActor)
 {
     Super::NotifyActorBeginOverlap(OtherActor);
 
-    //CPUにぶつかった場合の処理
     if (OtherActor && OtherActor != this && OtherActor->ActorHasTag("CPU"))
     {
-        // 音を鳴らす
+        if (bIsInvincible)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Already invincible! No collision effect."));
+            return;
+        }
+
         if (CollisionSound)
         {
             UGameplayStatics::PlaySoundAtLocation(this, CollisionSound, GetActorLocation());
         }
 
-        // 3秒間動けなくする
-        DisableMovementForSeconds(3.0f);
+        StartInvincibility(3.0f);
+
+        // === コリジョンを一時的に無効化する処理 ===
+        OtherActor->SetActorEnableCollision(false);
+
+        // タイマーで再有効化
+        FTimerHandle TempHandle;
+        GetWorldTimerManager().SetTimer(TempHandle, [OtherActor]()
+            {
+                if (OtherActor)
+                {
+                    OtherActor->SetActorEnableCollision(true);
+                    UE_LOG(LogTemp, Warning, TEXT("CPU collision re-enabled"));
+                }
+            }, 3.0f, false);
     }
+}
+
+void AMyCharacter::StartInvincibility(float Duration)
+{
+    bIsInvincible = true;
+
+    DisableMovementForSeconds(Duration);
+
+    GetWorldTimerManager().SetTimer(InvincibleTimerHandle, this, &AMyCharacter::EndInvincibility, Duration, false);
+
+    UE_LOG(LogTemp, Warning, TEXT("Invincibility started!"));
+}
+
+void AMyCharacter::EndInvincibility()
+{
+    bIsInvincible = false;
+    UE_LOG(LogTemp, Warning, TEXT("Invincibility ended!"));
 }
 
 void AMyCharacter::DisableMovementForSeconds(float Seconds)
